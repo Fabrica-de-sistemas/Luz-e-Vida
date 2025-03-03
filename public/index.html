@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,113 +9,233 @@
     <link rel="stylesheet" href="/static/styles/output.css">
     <title>Luz e Vida</title>
 </head>
+
 <body>
 
-    <!-- Navigation and options -->
-    <nav class="flex justify-between items-center p-4 bg-gray-100">
-        <div class="w-1/3">
-            <img src="/static/images/instituto_luz_e_vida_logo.png" alt="Placeholder Image" class="w-10 h-10">
+    <!-- Header -->
+    <header
+        class="flex w-full max-w-[1440px] h-[115px] px-28 py-3 justify-between items-center flex-shrink-0 bg-[#FEFEFE] mx-auto">
+        <!-- Logo -->
+        <div>
+            <img src="/public/static/images/instituto_luz_e_vida_logo.png" alt="Instituto Luz e Vida"
+                class="w-20 h-20 flex-shrink-0">
         </div>
-        <div class="w-1/3 text-center">
-            <span class="text-lg font-bold">Placeholder 2</span>
+
+        <!-- Área central com informações de contato -->
+        <div class="flex items-center justify-center gap-6">
+            <!-- Endereço com ícone map-pin -->
+            <div class="flex justify-center items-center gap-2">
+                <img src="/public/static/images/map-pin.svg" alt="Localização" class="w-6 h-6">
+                <p class="flex w-48 flex-col justify-center text-center text-[#36383E] text-base font-medium">
+                    Xavantes, Belford roxo RJ
+                </p>
+            </div>
+
+            <!-- Telefone com ícone -->
+            <div class="flex justify-center items-center gap-2">
+                <img src="/public/static/images/phone.svg" alt="Telefone" class="w-6 h-6">
+                <p class="flex w-32 flex-col justify-center text-center text-[#36383E] text-base font-medium">
+                    21 2758-1173
+                </p>
+            </div>
+
+            <!-- WhatsApp com ícone -->
+            <div class="flex justify-center items-center gap-2">
+                <img src="/public/static/images/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+            </div>
         </div>
-        <div class="w-1/3 text-right">
-            <span class="text-lg font-bold">Placeholder 3</span>
+
+        <!-- Área de navegação e botão de doação -->
+        <div class="flex items-center justify-end gap-4">
+            <!-- Link História -->
+            <a href="#" class="flex w-24 flex-col justify-center text-center text-[#36383E] text-xl font-medium">
+                Historia
+            </a>
+
+            <!-- Link Projetos -->
+            <a href="#" class="flex w-24 flex-col justify-center text-center text-[#36383E] text-xl font-medium">
+                Projetos
+            </a>
+
+            <!-- Botão Doar -->
+            <button
+                class="flex px-10 py-2.5 justify-center items-center gap-2.5 rounded-3xl bg-[#455074] text-white font-medium text-lg">
+                Doar
+            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen bg-cover bg-center" style="background-image: url('/static/images/placeholder-hero.jpg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 flex flex-col justify-center items-center h-full text-white">
-            <h1 class="text-5xl font-bold mb-4 text-center">
-                Juntos, podemos fazer a diferença!
-            </h1>
-            <p class="text-lg mb-8 text-center">
-                Apoie o Instituto Luz e Vida e ajude a transformar a vida de crianças e adolescentes em situação de vulnerabilidade.
-            </p>
-            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
-                Doe agora
-            </button>
+    <section class="relative max-w-[1388px] h-[646px] flex-shrink-0 rounded-3xl bg-cover mx-auto my-8"
+        style="background-image: url('/public/static/images/hero_bg.jpeg'); background-position: center 98%;">
+        <!-- Gradiente de sobreposição -->
+        <div
+            class="absolute inset-0 rounded-3xl bg-gradient-to-b from-[rgba(54,56,62,0.20)] via-[rgba(54,56,62,0.40)] to-[rgba(54,56,62,0.60)]">
+        </div>
+
+        <!-- Conteúdo centralizado -->
+        <div class="relative z-10 flex h-full items-center">
+            <!-- Container com margem à esquerda para centralizar mais à direita -->
+            <div class="flex w-[450px] flex-col items-start gap-8 ml-auto mr-15">
+                <h1 class="flex w-full h-[78px] flex-col justify-center text-[#FEFEFE] text-3xl font-extrabold">
+                    Juntos, podemos fazer a diferença!
+                </h1>
+                <p class="text-[#FEFEFE] text-xl font-normal">
+                    Apoie o Instituto Luz e Vida e transforme conosco a vida de crianças, adolescentes que vivem em
+                    vulnerabilidade social
+                </p>
+                <button
+                    class="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] text-white font-bold">
+                    Doe agora
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Us e Metrics Section -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Conheça a Luz e Vida</h2>
+        <div class="flex w-[1141px] justify-between items-start mx-auto px-4">
+            <!-- About Us Content -->
+            <div class="flex w-[641px] flex-col items-start gap-4 flex-shrink-0">
+                <h2 class="flex h-[37px] flex-col justify-center self-stretch text-[#36383E] text-5xl font-semibold">
+                    Conheça a Luz e Vida
+                </h2>
+                <p class="self-stretch text-[#36383E] text-xl font-normal leading-[155%]">
+                    O Instituto Luz e Vida é uma instituição filantrópica, situada no Xavante, município de Belford
+                    Roxo/RJ, que atua há <span class="yearsMarker">21</span> anos, promovendo um país melhor para todos
+                    por meio de projetos, programas e ações que geram mais renda, mais saúde, melhor educação, maior
+                    confiança no futuro e, acima de tudo, desenvolvimento social.
+                </p>
+                <div class="flex py-2.5 items-end gap-2.5 text-blue-950 cursor-pointer hover:text-indigo-950">
+                    <span>Conheça mais</span>
+                    <img src="/public/static/images/arrow-right.svg" alt="Seta" class="w-[18px] h-[18px]">
+                </div>
             </div>
-            <div class="text-gray-700">
-                <p>O Instituto Luz e Vida é uma instituição filantrópica, situada no Xavante, município de Belford Roxo/RJ, que atua há <span class="yearsMarker">21</span> anos, promovendo um país melhor para todos por meio de projetos, programas e ações que geram mais renda, mais saúde, melhor educação, maior confiança no futuro e, acima de tudo, desenvolvimento social.</p>
-            </div>
-            <div class="text-blue-950 py-4 cursor-pointer hover:text-indigo-950">
-                <p>Conheça main &rarr;</p>
-            </div>
-        </div>
 
-        <!-- Metrics -->
-        <div class="container mx-auto px-4 text-center text-2xl text-gray-800 text-wrap grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="m-6">
-                <p class="text-yellow-400 text-3xl"><span class="yearsMarker">21</span></p>
-                <p>ANOS DE HISTÓRIA</p>
-            </div>
-            <div class="m-6">
-                <p class="text-yellow-400 text-3xl">100%</p>
-                <p>CONTAS APROVADAS</p>
-            </div>
-            <div class="m-6">
-                <p class="text-yellow-400 text-3xl">+500.000</p>
-                <p>VIDAS IMPACTADAS</p>
+            <!-- Metrics -->
+            <div class="flex w-[307px] flex-col items-center gap-6 flex-shrink-0">
+                <div class="w-full flex flex-col items-center">
+                    <p
+                        class="flex h-[37px] flex-col justify-center self-stretch text-[#FAB515] text-center text-4xl font-semibold">
+                        <span class="yearsMarker">21</span>
+                    </p>
+                    <p
+                        class="flex h-[28px] flex-col justify-center self-stretch text-[#36383E] text-center text-xl font-medium leading-[155%]">
+                        ANOS DE HISTÓRIA
+                    </p>
+                </div>
+                <div class="w-full flex flex-col items-center">
+                    <p
+                        class="flex h-[37px] flex-col justify-center self-stretch text-[#FAB515] text-center text-4xl font-semibold">
+                        100%
+                    </p>
+                    <p
+                        class="flex w-[342px] h-[28px] flex-col justify-center text-[#36383E] text-center text-xl font-medium leading-[155%]">
+                        CONTAS APROVADAS
+                    </p>
+                </div>
+                <div class="w-full flex flex-col items-center">
+                    <p
+                        class="flex h-[37px] flex-col justify-center self-stretch text-[#FAB515] text-center text-4xl font-semibold">
+                        +500.000
+                    </p>
+                    <p
+                        class="flex w-[342px] h-[28px] flex-col justify-center text-[#36383E] text-center text-xl font-medium leading-[155%]">
+                        VIDAS IMPACTADAS
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Our Journey Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Nossa Jornada</h2>
-                <p class="text-gray-600">Descubra nossa trajetória e inspire-se com nosso propósito!</p>
-            </div>
-            <div class="flex justify-center">
-                <div class="w-full max-w-3xl">
-                    <iframe class="w-full aspect-video rounded-lg shadow-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+    <section
+        class="inline-flex h-[741px] px-[272px] py-20 justify-center items-center flex-shrink-0 bg-gray-100 w-full">
+        <div class="w-[894px] h-[581px] flex flex-col items-center">
+            <h2
+                class="flex w-[373px] h-[37px] flex-col justify-center flex-shrink-0 text-[#36383E] text-center text-[44px] font-semibold mb-4">
+                Nossa Jornada
+            </h2>
+            <p
+                class="flex w-[756px] h-[57px] flex-col justify-center flex-shrink-0 text-[#36383E] text-center text-2xl font-normal leading-[150%] mb-12">
+                Conheça a história que nos trouxe até aqui e inspire-se com nosso propósito!
+            </p>
+
+            <!-- Área do vídeo -->
+            <div
+                class="flex w-[894px] h-[407px] justify-center items-center flex-shrink-0 rounded-3xl bg-gray-300 overflow-hidden">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/cEqvgF8zkIM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
 
     <!-- What Drives Us Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">O que nos move</h2>
+    <section class="relative flex w-[1127px] py-[120px] px-[51px] justify-center items-center mx-auto bg-white"
+        >
+        <!-- Conteúdo principal -->
+        <div class="relative z-10 flex w-[1025px] flex-col items-center gap-20 flex-shrink-0">
+            <!-- Título e ornamento -->
+            <div class="flex flex-col items-center">
+                <h2
+                    class="flex h-[37px] flex-col justify-center self-stretch text-[#36383E] text-center text-[44px] font-semibold">
+                    O Que nos Move
+                </h2>
+                <div class="flex items-center mt-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="305" height="33" viewBox="0 0 305 33" fill="none">
+                        <path
+                            d="M303 29.2172C261.14 39.4921 250.093 1.99998 220.124 1.99998C190.155 1.99999 182.469 23.0352 152.5 23.0352C122.531 23.0352 107.219 12.9487 77.25 12.9487C47.2811 12.9488 54.6659 27.996 1.99999 29.2172"
+                            stroke="#FAB515" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8" />
+                    </svg>
+                    <img src="/public/static/images/navigation.svg" alt="Ícone de navegação" class="w-6 h-6 ml-2">
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-lg shadow-md p-6 border-2 border-gray-900">
-                    <div class="flex justify-center mb-4">
-                        <img src="/static/images/lucide_target.svg" alt="">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Missão</h3>
-                    <p class="text-gray-700 text-center">Nossa missão é promover inclusão e transformação social na comunidade do Xavantes, oferecendo educação, cultura e oportunidades para um futuro melhor.</p>
+
+            <!-- Cards -->
+            <div class="flex justify-center gap-10">
+                <!-- Card 1 - Missão -->
+                <div
+                    class="flex w-[315px] p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] bg-white shadow-md">
+                    <img src="/public/static/images/lucide_target.svg" alt="Alvo" class="w-[108px] h-[90px]">
+                    <h3 class="flex h-[37px] flex-col justify-center self-stretch text-[#36383E] text-3xl font-bold">
+                        Missão
+                    </h3>
+                    <p class="self-stretch text-[#36383E] text-base font-normal leading-[150%]">
+                        Nossa missão é promover inclusão e transformação social na comunidade do Xavantes, oferecendo
+                        educação, cultura e oportunidades para um futuro melhor.
+                    </p>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white rounded-lg shadow-md p-6 border-2 border-gray-900">
-                    <div class="flex justify-center mb-4">
-                        <img src="/static/images/lucide_lightbulb.svg" alt="">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Visão</h3>
-                    <p class="text-gray-700 text-center">Ser um agente de transformação no Xavantes, promovendo educação de excelência e melhorando a qualidade de vida da comunidade.</p>
+
+                <!-- Card 2 - Visão -->
+                <div
+                    class="flex w-[315px] p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] bg-white shadow-md">
+                    <img src="/public/static/images/lucide_lightbulb.svg" alt="Lâmpada" class="w-[90px] h-[98px]">
+                    <h3 class="flex h-[37px] flex-col justify-center self-stretch text-[#36383E] text-3xl font-bold">
+                        Visão
+                    </h3>
+                    <p class="self-stretch text-[#36383E] text-base font-normal leading-[150%]">
+                        Ser um agente de transformação no Xavantes, promovendo educação de excelência e melhorando a
+                        qualidade de vida da comunidade.
+                    </p>
                 </div>
-                <!-- Card 3 -->
-                <div class="bg-white rounded-lg shadow-md p-6 border-2 border-gray-900">
-                    <div class="flex justify-center mb-4">
-                        <img src="/static/images/lucide_hand-heart.svg" alt="">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Valores</h3>
-                    <p class="text-gray-700 text-center">Somos guiados pelo amor ao próximo, respeito, honestidade e empatia. Acreditamos na justiça, na educação e no poder transformador da cultura, arte, esporte e lazer. Com humildade, ética e transparência, trabalhamos para garantir direitos, promover inclusão e impactar vidas com solidariedade.</p>
+
+                <!-- Card 3 - Valores -->
+                <div
+                    class="flex w-[315px] p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] bg-white shadow-md">
+                    <img src="/public/static/images/lucide_hand-heart.svg" alt="Mão com coração"
+                        class="w-[90px] h-[97.714px]">
+                    <h3 class="flex h-[37px] flex-col justify-center self-stretch text-[#36383E] text-3xl font-bold">
+                        Valores
+                    </h3>
+                    <p class="self-stretch text-[#36383E] text-base font-normal leading-[150%]">
+                        Somos guiados pelo amor ao próximo, respeito, honestidade e empatia. Acreditamos na justiça, na
+                        educação e no poder transformador da cultura, arte, esporte e lazer. Com humildade, ética e
+                        transparência, trabalhamos para garantir direitos, promover inclusão e impactar vidas com
+                        solidariedade.
+                    </p>
                 </div>
             </div>
         </div>
@@ -122,7 +243,8 @@
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    
+
 
 </body>
+
 </html>
