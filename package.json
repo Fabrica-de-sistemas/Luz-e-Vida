@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "css": "npx @tailwindcss/cli -i ./public/static/styles/input.css -o ./public/static/styles/output.css",
-    "cssw": "npx @tailwindcss/cli -i ./public/static/styles/input.css -o ./public/static/styles/output.css --watch"
+    "cssw": "npx @tailwindcss/cli -i ./public/static/styles/input.css -o ./public/static/styles/output.css --watch",
+    "serve": "node index.js"
   },
   "dependencies": {
     "express": "^4.21.2",
