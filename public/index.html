@@ -24,7 +24,7 @@
         </div>
 
         <!-- Área central com informações de contato -->
-        <div class="flex items-center justify-center gap-6 text-nowrap">
+        <div class="flex items-center justify-center gap-6 text-nowrap overflow-hidden">
             <!-- Endereço com ícone map-pin -->
             <div class="flex justify-center items-center gap-1">
                 <img src="/static/images/map-pin.svg" alt="Localização" class="w-4 h-4">
@@ -196,7 +196,7 @@
 
             <!-- Cards -->
             <div
-                class="flex justify-center gap-10 text-wrap flex-wrap lg:bg-[#455074] rounded-3xl lg:flex-col w-dvw lg:justify-between p-2 lg:p-8 text-[#36383E] lg:text-white">
+                class="flex justify-center gap-7 text-wrap flex-wrap lg:bg-[#455074] rounded-3xl lg:flex-col w-full lg:justify-between p-2 lg:p-8 text-[#36383E] lg:text-white">
                 <!-- Card 1 - Missão -->
                 <div
                     class="flex md:w-1/4 lg:w-full p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] lg:border-0 bg-white lg:bg-inherit shadow-md lg:shadow-none">
@@ -312,44 +312,44 @@
     </section>
 
     <!-- Seção mid -->
-    <section class="flex w-[1440px] h-[1060px] flex-shrink-0 mx-auto">
+    <section class="flex justify-evenly items-center mx-auto">
         <!-- Lado esquerdo - Textos centralizados verticalmente -->
-        <div class="flex w-[585px] flex-col justify-center items-start px-12 relative">
+        <div class="flex min-w-0 sm:w-[640px] flex-col justify-center px-12 lg:px-6">
             <div class="flex flex-col items-start gap-6 self-stretch">
-                <h2 class="h-[106px] self-stretch text-[#36383E] text-[44px] font-normal leading-normal relative">
+                <h2 class="sm:h-[106px] sm:self-stretch text-[#36383E] text-[44px] font-normal leading-normal relative">
                     Toda criança merece um <span class="font-semibold">futuro brilhante</span>!
                     <span class="inline-block ml-1">
                         <!-- Ornamento svg após "futuro brilhante" -->
-                        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#FAB515">
+                        <svg class="w-12 h-12 hidden sm:block " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#FAB515">
                             <path d="M24 0L29.79 18.21L48 24L29.79 29.79L24 48L18.21 29.79L0 24L18.21 18.21L24 0Z">
                             </path>
                         </svg>
                     </span>
                 </h2>
 
-                <p class="w-[478px] text-[#36383E] text-2xl font-normal leading-[150%]">
+                <p class="sm:w-[478px] text-[#36383E] text-2xl font-normal leading-[150%]">
                     Milhares vivem sem acesso à educação e oportunidades. Juntos, podemos mudar essa realidade!
                 </p>
             </div>
         </div>
 
         <!-- Lado direito - Imagem -->
-        <div class="w-[736px] h-[1060px] flex-shrink-0 rounded-l-3xl bg-cover bg-center bg-[#DAD3D3]"
+        <div class="hidden lg:block grow w-[51vw] h-[60vw] rounded-l-3xl bg-cover bg-center bg-[#DAD3D3]"
             style="background-image: url('/static/images/children.jpeg');">
         </div>
     </section>
 
     <!-- Seção Nossos Projetos com Carrossel Swiper -->
-    <section class="flex flex-col items-start gap-8 flex-shrink-0 mx-auto my-16 px-4 md:px-8">
+    <section class="flex flex-col items-start gap-8 flex-shrink-0 mx-auto my-16 px-4 md:px-8 py-12">
         <h2
             class="flex h-[37px] flex-col justify-center flex-shrink-0 self-stretch text-[#36383E] text-[44px] font-semibold">
             Nossos Projetos
         </h2>
         
-        <div class="swiper-container w-full relative">
-            <div class="swiper-wrapper">
+        <div class="swiper-container w-full relative overflow-hidden">
+            <div class="swiper-wrapper ">
                 <!-- Projeto 1 (Slide) -->
-                <div class="swiper-slide flex justify-center">
+                <div class="swiper-slide flex justify-center ">
                     <div class="flex w-[280px] flex-col items-start gap-[10px] h-[450px]">                    
                         <div class="w-full h-[201px] flex items-center justify-center">
                             <div class="w-[280px] h-[201px] rounded-3xl bg-cover bg-center"
@@ -447,7 +447,7 @@
                 </div>
             </div>
 
-            <!-- Paginação  -->
+            <!-- Paginação -->
             <div class="swiper-pagination"></div>
 
             <!-- Botões de navegação  -->
