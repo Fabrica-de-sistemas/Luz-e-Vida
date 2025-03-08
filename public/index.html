@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- This web page uses TailwindCSS for styling -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- <link rel="stylesheet" href="/static/styles/output.css"> -->
+    <link rel="stylesheet" href="/public/static/styles/swiper-init.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/static/js/swiper-init.js"></script>
     <title>Luz e Vida</title>
 </head>
 
@@ -335,7 +338,124 @@
             style="background-image: url('/static/images/children.jpeg');">
         </div>
     </section>
-    
+
+    <!-- Seção Nossos Projetos com Carrossel Swiper -->
+    <section class="flex flex-col items-start gap-8 flex-shrink-0 mx-auto my-16 px-4 md:px-8">
+        <h2
+            class="flex h-[37px] flex-col justify-center flex-shrink-0 self-stretch text-[#36383E] text-[44px] font-semibold">
+            Nossos Projetos
+        </h2>
+        
+        <div class="swiper-container w-full relative">
+            <div class="swiper-wrapper">
+                <!-- Projeto 1 (Slide) -->
+                <div class="swiper-slide flex justify-center">
+                    <div class="flex w-[280px] flex-col items-start gap-[10px] h-[450px]">                    
+                        <div class="w-full h-[201px] flex items-center justify-center">
+                            <div class="w-[280px] h-[201px] rounded-3xl bg-cover bg-center"
+                                style="background-image: url('/static/images/SEMED.png');">
+                            </div>
+                        </div>
+                        <div class="w-full h-[40px] flex items-center">
+                            <h3 class="self-stretch text-[#36383E] text-2xl font-semibold">
+                                Educação infantil:
+                            </h3>
+                        </div>
+                        <div class="w-full flex-1 overflow-hidden">
+                            <p class="text-[#36383E] text-base font-normal leading-[150%]">
+                                O Projeto da Educação Infantil em parceria com o Município de Belford Roxo, através da
+                                Secretaria de Educação do município, visa a aprendizagem e o desenvolvimento 260
+                                crianças de 2,
+                                3, 4 e 5 anos com as séries iniciais da Educação Infantil, com eixos estruturantes as
+                                interações
+                                e brincadeiras, assegurando-lhes os direitos de conviver, brincar, participar, explorar,
+                                expressar e conhecer-se.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 (Slide) -->
+                <div class="swiper-slide flex justify-center">
+                    <div class="flex w-[320px] flex-col items-start gap-[10px] h-[450px]">
+                        <div class="w-full h-[201px] flex items-center justify-center">
+                            <div class="w-[320px] h-[190px] rounded-3xl bg-cover overflow-hidden"
+                                style="background-image: url('/static/images/FIA.png'); background-position: 0px 30px; background-size: 100% 73.798%;">
+                            </div>
+                        </div>
+                        <div class="w-full h-[40px] flex items-center">
+                            <h3 class="self-stretch text-[#36383E] text-2xl font-semibold">
+                                Esperança:
+                            </h3>
+                        </div>
+                        <div class="w-full flex-1 overflow-hidden">
+                            <p class="text-[#36383E] text-base font-normal leading-[140%]">
+                                O Projeto Convivendo com a Esperança, em parceria com a FIA e o Governo do RJ, atende
+                                crianças e
+                                adolescentes em situação de risco e vulnerabilidade social - Convivên...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 (Slide) -->
+                <div class="swiper-slide flex justify-center">
+                    <div class="flex w-[320px] flex-col items-start gap-[10px] h-[450px]">
+                        <div class="w-full h-[201px] flex items-center justify-center">
+                            <div class="w-[200px] h-[201px] rounded-3xl bg-cover bg-center"
+                                style="background-image: url('/static/images/SAPEA.png');">
+                            </div>
+                        </div>
+                        <div class="w-full h-[40px] flex items-center">
+                            <h3 class="self-stretch text-[#36383E] text-2xl font-semibold">
+                                SAPEDA:
+                            </h3>
+                        </div>
+                        <div class="w-full flex-1 overflow-hidden">
+                            <p class="text-[#36383E] text-base font-normal leading-[150%]">
+                                O SAPEDA - Suporte Assistencial Para Enfrentamento Da Adversidade oferece suporte
+                                assistencial,
+                                priorizando os mais necessitados por meio de políticas compensatória que aten...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4 (Slide) -->
+                <div class="swiper-slide flex justify-center">
+                    <div class="flex w-[320px] flex-col items-start gap-[10px] h-[450px]">
+                        <div class="w-full h-[201px] flex items-center justify-center">
+                            <div class="w-[200px] h-[201px] rounded-3xl bg-cover bg-center"
+                                style="background-image: url('/static/images/BAZAR.png');">
+                            </div>
+                        </div>
+                        <div class="w-full h-[40px] flex items-center">
+                            <h3 class="self-stretch text-[#36383E] text-2xl font-semibold">
+                                Bazar Luz e Vida:
+                            </h3>
+                        </div>
+                        <div class="w-full flex-1 overflow-hidden">
+                            <p class="text-[#36383E] text-base font-normal leading-[150%]">
+                                O Bazar Luz e Vida surge da intenção de despertar nos indivíduos atos de solidariedades
+                                e ao
+                                mesmo tempo envolve-los em questões que venham beneficiar os usuários de nossos
+                                serviços,
+                                projetos e programas, visando colaborar com as despesas cotidianas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginação  -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Botões de navegação  -->
+            <div class="swiper-button-prev text-gray-800"></div>
+            <div class="swiper-button-next text-gray-800"></div>
+        </div>
+    </section>
+
 </body>
 
 </html>
