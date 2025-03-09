@@ -1,70 +1,59 @@
-// Inicialização do Swiper quando o documento estiver pronto
+// Inicialização do Swiper para o carrossel de projetos
 document.addEventListener('DOMContentLoaded', function () {
   // Verifica se Swiper está disponível
   if (typeof Swiper !== 'undefined') {
     // Inicializa o Swiper
     const projectsSwiper = new Swiper('.swiper-container', {
-      // Configurações básicas
-      slidesPerView: 3, // Mostra 3 slides por vez
-      spaceBetween: 10, // Espaço entre slides (em px)
-      grabCursor: true, // Muda o cursor para "mão" quando passa sobre o slider
-      loop: true, // Permite que o carrossel faça um loop contínuo
-
-      // Efeito de transição
-      effect: 'slide',
+      // Configuração básica
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: true,
 
       // Autoplay
       autoplay: {
-        delay: 5000, // Tempo entre transições (em ms)
-        disableOnInteraction: false, // Continua o autoplay mesmo após interação do usuário
+        delay: 5000,
+        disableOnInteraction: false,
       },
 
-      // Paginação
+      // Navegação
       pagination: {
         el: '.swiper-pagination',
-        clickable: true, // Permite clicar nos pontos para navegar
+        clickable: true,
       },
-
-      // Botões de navegação
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
 
-      // Configurações responsivas
+      // Responsividade
       breakpoints: {
-        // Quando a largura da tela >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        // Quando a largura da tela >= 768px e < 1200px
-        768: {
+        // Quando a largura da tela é maior que 640px
+        640: {
           slidesPerView: 2,
-          spaceBetween: 10,
+          spaceBetween: 20
         },
-        // Quando a largura da tela < 768px
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 5,
+        // Quando a largura da tela é maior que 1024px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
         }
       }
-    });
-
-    // Evento para reinicializar o Swiper quando a janela for redimensionada
-    window.addEventListener('resize', function () {
-      projectsSwiper.update();
     });
 
     // Pausa o autoplay quando o mouse está sobre o carrossel
     const swiperContainer = document.querySelector('.swiper-container');
     if (swiperContainer) {
       swiperContainer.addEventListener('mouseenter', function () {
-        projectsSwiper.autoplay.stop();
+        if (projectsSwiper.autoplay && projectsSwiper.autoplay.running) {
+          projectsSwiper.autoplay.stop();
+        }
       });
 
       swiperContainer.addEventListener('mouseleave', function () {
-        projectsSwiper.autoplay.start();
+        if (projectsSwiper.autoplay && !projectsSwiper.autoplay.running) {
+          projectsSwiper.autoplay.start();
+        }
       });
     }
   } else {
