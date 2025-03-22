@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doações - Luz e Vida</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/public/static/styles/swiper-init.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/static/js/swiper-init.js"></script>
+    <script src="/static/js/timeline.js"></script>
+    <script src="/index.js"></script>
+</head>
+
+<body>
+    <header class="flex w-full p-3 justify-between items-center bg-[#FEFEFE] mx-auto">
+        <!-- Logo -->
+        <div>
+            <img src="/static/images/instituto_luz_e_vida_logo.png" alt="Instituto Luz e Vida"
+                class="min-w-10 w-10 md:w-20 min-h-10 h-10 md:h-20">
+        </div>
+
+        <!-- Área central com informações de contato -->
+        <div class="flex items-center justify-center gap-6 text-nowrap overflow-hidden">
+            <!-- Endereço com ícone map-pin -->
+            <div class="flex justify-center items-center gap-1">
+                <img src="/static/images/map-pin.svg" alt="Localização" class="w-4 h-4">
+                <p class="flex flex-col justify-center text-center text-[#36383E] text-base font-medium">
+                    Xavantes, Belford roxo RJ
+                </p>
+            </div>
+
+            <!-- Telefone com ícone -->
+            <div class="flex justify-center items-center gap-1">
+                <img src="/static/images/phone.svg" alt="Telefone" class="w-4 h-4">
+                <p class="flex flex-col justify-center text-center text-[#36383E] text-base font-medium">
+                    21 2758-1173
+                </p>
+            </div>
+
+            <!-- WhatsApp com ícone -->
+            <div class="flex justify-center items-center gap-1">
+                <img src="/static/images/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-4 h-4">
+            </div>
+        </div>
+
+        <!-- Área de navegação e botão de doação -->
+        <div class="hidden md:flex items-center justify-end gap-4">
+            <!-- Link História -->
+            <a href="#"
+                class="hidden lg:flex w-24 flex-col justify-center text-center text-[#36383E] text-xl font-medium ">
+                Historia
+            </a>
+
+            <!-- Link Projetos -->
+            <a href="#"
+                class="hidden lg:flex w-24 flex-col justify-center text-center text-[#36383E] text-xl font-medium">
+                Projetos
+            </a>
+
+            <!-- Botão Doar -->
+            <button
+                class="flex px-10 py-2.5 justify-center items-center gap-2.5 rounded-3xl bg-[#455074] text-white font-medium text-lg">
+                Doar
+            </button>
+        </div>
+    </header>
+    <section class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-4xl font-bold text-center mb-8">Página de Doações</h1>
+        <p class="text-lg text-center">Conteúdo da página de doações aqui...</p>
+    </section>
+</body>
+
+</html>
