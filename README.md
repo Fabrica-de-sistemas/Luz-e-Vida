@@ -1,33 +1,48 @@
-# Luz e Vida
+# Instituto Luz e Vida
 
-This project is a website for the Luz e Vida Institute, a philanthropic organization located in Xavante, Belford Roxo/RJ, Brazil. The institute has been working for over 21 years to improve the lives of children and adolescents in vulnerable situations through various social programs and actions.
+Este é o repositório do site do Instituto Luz e Vida, uma organização filantrópica localizada em Belford Roxo/RJ.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
--   HTML
--   Tailwind CSS
--   JavaScript
+-   **HTML**: Estrutura do conteúdo do site.
+-   **CSS (TailwindCSS)**: Estilização do site.
+-   **JavaScript**: Interatividade e funcionalidades dinâmicas.
+-   **Express**: Servidor web para servir os arquivos do site. 
+-   **Nodemon**: Ferramenta para reiniciar o servidor automaticamente durante o desenvolvimento.
+-   **Swiper**: Biblioteca JavaScript para criar carrosséis.
+-   **HTMX**: Permite a criação de interfaces de usuário dinâmicas sem a necessidade de escrever JavaScript complexo.
 
-## Getting Started
 
-1.  **Clone the repository:**
+## Como Executar o Projeto
 
+1.  **Instale as dependências**:
     ```bash
-    git clone <repository-url>
+    npm install
     ```
 
-2.  **Navigate to the project directory:**
-
+2.  **Inicie o servidor em produção**:
     ```bash
-    cd Luz e Vida
+    node index.js
     ```
 
-3.  **Open `public/index.html` in your browser.**
+3. **Inicie o servidor em desenvolvimento**:
+    ```bash
+    npm run dev
+    ```
 
-## Contributing
+3.  **Acesse o site**:
+    Abra seu navegador e acesse `http://localhost:3000`.
 
-Contributions are welcome! Please feel free to submit a pull request.
+## Contribuições
 
-## License
+Contribuições são bem-vindas! Se você deseja contribuir com o projeto, siga os seguintes passos:
 
-This project is licensed under the MIT License.
+1.  Faça um fork do repositório.
+2.  Crie uma branch para sua feature (`git checkout -b feature/NovaFeature`).
+3.  Faça commit das suas mudanças (`git commit -am 'Adiciona nova feature'`).
+4.  Faça push para a branch (`git push origin feature/NovaFeature`).
+5.  Crie um novo Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).

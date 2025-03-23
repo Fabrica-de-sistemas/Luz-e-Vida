@@ -7,13 +7,19 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js -e js,ejs,html,css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "css": "npx @tailwindcss/cli -i ./public/static/styles/input.css -o ./public/static/styles/output.css",
     "cssw": "npx @tailwindcss/cli -i ./public/static/styles/input.css -o ./public/static/styles/output.css --watch",
     "serve": "node index.js"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "multer": "^1.4.5-lts.2",
+    "nodemon": "^3.1.9",
     "tailwindcss": "^4.0.9"
   }
 }
