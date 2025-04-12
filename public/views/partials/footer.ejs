@@ -1,9 +1,9 @@
 <!-- Rodapé -->
-<section class="flex w-full max-w-[1440px] mx-auto px-[96px] py-14 justify-center items-center bg-[#455074]">
+<section class="flex flex-col xl:inline-flex w-full mx-auto px-[96px] py-14 justify-center items-center bg-[#455074]">
     <!-- Container principal -->
-    <div class="flex items-start gap-[134px]">
+    <div class="flex items-center justify-center xl:gap-[134px]">
         <!-- Lado Esquerdo -->
-        <div class="flex w-[704px] flex-col items-start gap-[108px]">
+        <div class="xl:flex hidden xl:w-[704px] flex-col items-start gap-[108px]">
             <!-- Links de Navegação -->
             <div class="flex w-[553px] items-start gap-[88px]">
                 <!-- Container 1 -->
@@ -37,7 +37,7 @@
         </div>
 
         <!-- Lado Direito -->
-        <div class="flex w-[388px] flex-col items-start gap-6">
+        <div class="flex xl:w-1/3 w-full flex-col items-start gap-6">
             <!-- Endereço -->
             <div class="flex flex-col items-start gap-3 w-full">
                 <!-- Traço decorativo -->
@@ -54,7 +54,7 @@
                 </p>
 
                 <!-- Mapa -->
-                <div class="w-[374px] h-[206px] rounded-[24px] bg-center bg-cover bg-no-repeat mt-2"
+                <div class="w-[256px] h-[206px] sm:w-[374px] sm:h-[206px] rounded-[24px] bg-center bg-cover bg-no-repeat mt-2"
                     style="background-image: url('/static/images/endereço.png');">
                 </div>
             </div>
@@ -167,15 +167,13 @@
 </section>
 
 <!-- Container para o Copyright -->
-<section class="flex w-full max-w-[1440px] mx-auto px-[96px] bg-[#455074] justify-center items-center">
-    <div class="flex w-[1249px] flex-col items-center gap-[38px] flex-shrink-0">
+<section class="flex w-full mx-auto px-[16px] lg:px-[96px] bg-[#455074] justify-center items-center">
+    <div class="flex flex-col items-center gap-[38px]">
         <!-- Linha horizontal -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="1251" height="2" viewBox="0 0 1251 2" fill="none">
-            <path d="M1 1L1250 0.999891" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" />
-        </svg>
+        <div class="h-0.5 w-full bg-[#FEFEFE]"></div>
 
         <!-- Texto de copyright -->
-        <p class="self-stretch text-[#FEFEFE] text-center text-base font-medium pb-6">
+        <p class="self-stretch text-[#FEFEFE] text-center text-base font-medium pb-6 text-wrap">
             © Copyright 2023 Todos os direitos reservados ao Instituto Luz e Vida – CNPJ: 05.090.047/0001-07
         </p>
     </div>

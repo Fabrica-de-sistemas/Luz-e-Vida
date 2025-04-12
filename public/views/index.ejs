@@ -499,7 +499,7 @@
     </section>
 
     <!-- Diretores -->
-    <section class="flex flex-col items-start w-full max-w-[1190px] mx-auto gap-6 px-4 my-16">
+    <section class="flex flex-col items-center lg:items-start w-full max-w-[1190px] mx-auto gap-6 px-4 my-16 ">
         <!-- Título -->
         <h2 class="h-[38px] w-full flex flex-col justify-center text-[#455074] text-[32px] font-extrabold">
             Os Corações por Trás da Missão
@@ -509,7 +509,7 @@
         </h3>
 
         <!-- Container dos Diretores -->
-        <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
             <!-- Primeiro Diretor -->
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <!-- Imagem da Pessoa -->
@@ -546,9 +546,9 @@
     </section>
 
     <!-- Seção de Contato -->
-    <section class="flex items-center w-full max-w-[1214px] mx-auto gap-[130px] py-16 px-4">
+    <section class="flex items-center justify-center w-full max-w-[1214px] mx-auto lx:gap-[130px] py-16 px-1 lg:px-4">
         <!-- Informações de Contato - Lado Esquerdo -->
-        <div class="flex flex-col items-start gap-8 flex-1">
+        <div class="hidden lg:flex flex-col items-start gap-8 flex-1">
             <!-- Título Principal -->
             <h2 class="h-[42px] w-full flex flex-col justify-center text-[#36383E] text-[44px] font-semibold">
                 Contato
@@ -676,7 +676,7 @@
 
         <!-- Formulário de Contato - Lado Direito -->
         <div
-            class="w-[696px] h-[623px] flex-shrink-0 rounded-[24px] bg-[#FEFEFE] shadow-[4px_6px_6px_0px_rgba(52,52,52,0.24)] p-8">
+            class="flex-shrink-0 rounded-[24px] bg-[#FEFEFE] shadow-[4px_6px_6px_0px_rgba(52,52,52,0.24)] p-2 md:p-8">
             <form class="space-y-6">
                 <!-- Nome -->
                 <div>
@@ -685,31 +685,31 @@
                         Nome
                     </label>
                     <input type="text" id="nome"
-                        class="w-[637px] h-[58px] flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
+                        class="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
                         placeholder="Seu nome">
                 </div>
 
                 <!-- Email e Telefone - Grid de 2 colunas -->
-                <div class="flex justify-between">
+                <div class="flex flex-col md:flex-row justify-between w-full gap-0.5">
                     <!-- Email -->
-                    <div>
+                    <div class="w-full md:w-1/2">
                         <label for="email"
                             class="block text-[#36383E] text-base font-medium leading-normal tracking-[0.192px] mb-2">
                             Email
                         </label>
                         <input type="email" id="email"
-                            class="w-[310px] h-[58px] flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
+                            class="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
                             placeholder="Seu email">
                     </div>
 
                     <!-- Telefone -->
-                    <div>
+                    <div class="w-full md:w-1/2">
                         <label for="telefone"
                             class="block text-[#36383E] text-base font-medium leading-normal tracking-[0.192px] mb-2">
                             Telefone
                         </label>
                         <input type="tel" id="telefone"
-                            class="w-[310px] h-[58px] flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
+                            class="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
                             placeholder="Seu telefone">
                     </div>
                 </div>
@@ -721,7 +721,7 @@
                         Mensagem
                     </label>
                     <textarea id="mensagem" rows="5"
-                        class="w-[637px] h-[172px] flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4 py-3"
+                        class="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4 py-3"
                         placeholder="Sua mensagem"></textarea>
                 </div>
 
