@@ -1,10 +1,27 @@
+{/* Principais Imagens do site */}
 import hero from '../../assets/images/hero_bg.jpeg';
 import childrenImg from '../../assets/images/children.jpeg';
 import navigationImg from '../../assets/images/navigation.svg'
-//import semed from '../../assets/images/SEMED.png';
-//import fia from '../../assets/images/FIA.png';
-import sapeda from '../../assets/images/SAPEA.png';
 import arrowRight from '../../assets/images/arrow-right.svg';
+
+{/* Nossos Projetos e Parceiros */}
+import semed from '../../assets/images/SEMED.png';
+import fia from '../../assets/images/FIA.png';
+import sapeda from '../../assets/images/SAPEA.png';
+import bazar from '../../assets/images/BAZAR.png'
+{/* Parceiros */}
+import caps from '../../assets/images/Parceiros/CAPS.png'
+import cmas from '../../assets/images/Parceiros/CMAS.png'
+import ciep from '../../assets/images/Parceiros/CIEP.png'
+import cnes from '../../assets/images/Parceiros/CNES.png'
+import conselhoTutelar from '../../assets/images/Parceiros/CONSELHOTUTELAR.jpeg'
+import creas from '../../assets/images/Parceiros/CREAS.png'
+import cremerj from '../../assets/images/Parceiros/CREMERJ.png'
+import eliel from '../../assets/images/Parceiros/ELIEL.png'
+import mesabrasil from '../../assets/images/Parceiros/MESABRASIL.png'
+import pjerj from '../../assets/images/Parceiros/PJERJ.png'
+import prefeiturabr from '../../assets/images/Parceiros/PREFEITURABR.png'
+import unica from '../../assets/images/Parceiros/UNICA.png'
 
 {/* Nossa Jornada Imagens */}
 import piscina from '../../assets/images/piscina.jpeg'
@@ -23,7 +40,7 @@ import { useState } from "react";
 
 {/* Swiper Imports */}
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import 'swiper/swiper-bundle.css';
 import 'swiper/modules';
 
@@ -306,14 +323,23 @@ function Home() {
         </h2>
 
         {/* Container do Swiper com largura controlada */}
-        <div className="swiper-container w-full overflow-hidden" style={{maxWidth: "100%",}}>
-            <div className="swiper-wrapper">
+        <div className='w-full'>
+        <Swiper
+            slidesPerView={3}
+            loop={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+        >
+            <SwiperSlide> 
                 {/* Projeto 1 (Slide) */}
                 <div className="swiper-slide">
                     <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
                         <div className="w-full h-[201px]">
                             <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                style={{backgroundImage: `url(${'/static/images/SEMED.png'})`,}}>
+                                style={{backgroundImage: `url(${semed})`,}}>
                             </div>
                         </div>
                         <h3 className="text-[#36383E] text-2xl font-semibold">
@@ -329,13 +355,14 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
+            </SwiperSlide>
+            <SwiperSlide>
                 {/* Projeto 2 (Slide) */}
                 <div className="swiper-slide">
                     <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
                         <div className="w-full h-[201px]">
                             <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                style={{backgroundImage: `url(${'/static/images/FIA.png'})`, backgroundPosition: "0px 30px", backgroundSize: "100% 73.798%",}}>
+                                style={{backgroundImage: `url(${fia})`, backgroundPosition: "0px 30px", backgroundSize: "100% 73.798%",}}>
                             </div>
                         </div>
                         <h3 className="text-[#36383E] text-2xl font-semibold">
@@ -347,7 +374,8 @@ function Home() {
                         </p>
                     </div>
                 </div>
-
+            </SwiperSlide>
+            <SwiperSlide>
                 {/* Projeto 3 (Slide) */}
                 <div className="swiper-slide">
                     <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
@@ -366,13 +394,14 @@ function Home() {
                         </p>
                     </div>
                 </div>
-
+            </SwiperSlide>
+            <SwiperSlide>
                 {/* Projeto 4 (Slide) */}
                 <div className="swiper-slide">
                     <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
                         <div className="w-full h-[201px]">
                             <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                style={{backgroundImage: `url(${'/static/images/BAZAR.png'})`,}}>
+                                style={{backgroundImage: `url(${bazar})`,}}>
                             </div>
                         </div>
                         <h3 className="text-[#36383E] text-2xl font-semibold">
@@ -385,9 +414,8 @@ function Home() {
                         </p>
                     </div>
                 </div>
-            </div>
-
-
+            </SwiperSlide>
+        </Swiper>
         </div>
     </section>
 
@@ -485,89 +513,117 @@ function Home() {
         </h2>
 
         {/* Container de Imagens (Carrossel) */}
-        <div className="h-[226px] w-full flex justify-end items-center">
-            <div className="swiper-container w-full overflow-hidden">
-                <div className="swiper-wrapper">
+        <div className='w-full block items-center justify-center m-auto'>
+            <Swiper
+                loop={true}
+                spaceBetween={10}
+                slidesPerView={4}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CMAS.png'})`,}}></div>
+                                style={{backgroundImage: `url(${cmas})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CAPS.png'})`,}}></div>
+                                style={{backgroundImage: `url(${caps})`,}}></div>
                         </div>
                     </div>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CIEP.png'})`,}}></div>
+                                style={{backgroundImage: `url(${ciep})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CNES.png'})`,}}></div>
+                                style={{backgroundImage: `url(${cnes})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CONSELHOTUTELAR.jpeg'})`,}}></div>
+                                style={{backgroundImage: `url(${conselhoTutelar})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CREAS.png'})`,}}></div>
+                                style={{backgroundImage: `url(${creas})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/CREMERJ.png'})`,}}></div>
+                                style={{backgroundImage: `url(${cremerj})`,}}></div>
                         </div>
                     </div>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/ELIEL.png'})`,}}></div>
+                                style={{backgroundImage: `url(${eliel})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/FIA.jpeg'})`,}}></div>
+                                style={{backgroundImage: `url(${fia})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/MESABRASIL.png'})`,}}></div>
+                                style={{backgroundImage: `url(${mesabrasil})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/PJERJ.png'})`,}}></div>
+                                style={{backgroundImage: `url(${pjerj})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/PREFEITURABR.png'})`,}}></div>
+                                style={{backgroundImage: `url(${prefeiturabr})`,}}></div>
                         </div>
                     </div>
+                </SwiperSlide>
+                <SwiperSlide>
                     <div className="swiper-slide">
                         <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
                             <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                style={{backgroundImage: `url(${'/static/images/Parceiros/UNICA.png'})`,}}></div>
+                                style={{backgroundImage: `url(${unica})`,}}></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </SwiperSlide>
+            </Swiper>
         </div>
     </section>
 
