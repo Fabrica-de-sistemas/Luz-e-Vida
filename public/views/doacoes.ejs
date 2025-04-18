@@ -1,58 +1,108 @@
 <%- include('partials/header') %>
-<!-- Doações -->
-<section class="bg-gray-100 font-sans h-screen">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex md:w-9/10">
-            <form class="p-8 md:p-12 lg:p-16 bg-[#455074] md:w-1/2 text-white flex flex-col justify-between" hx-post="/doacoes" hx-trigger="submit" hx-boost="true" hx-swap="innerHTML" hx-push-url="checkout" hx-target="body" enctype="multipart/form-data">
-                <div>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Transforme vidas com um gesto simples !</h2>
-                    <p class="text-sm md:text-base mb-6">Faça parte dessa corrente do bem e ajude a mudar histórias !</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="rounded-md flex flex-col items-center justify-center text-center">
-                            <button type="button" onclick="setValue(20)" class="text-lg font-semibold p-2 border border-white rounded-md text-center">
-                                R$ 20,00
-                            </button>
-                            <p class="text-xs md:text-sm w-full">Ajude a fornecer materiais educativos</p>
-                        </div>
-                        <div class="rounded-md flex flex-col items-center justify-center text-center">
-                            <button type="button" onclick="setValue(25)" class="text-lg font-semibold p-2 border border-white rounded-md text-center">
-                                R$ 25,00
-                            </button>
-                            <p class="text-xs md:text-sm w-full">Contribua com alimentação para uma criança</p>
-                        </div>
-                        <div class="rounded-md flex flex-col items-center justify-center text-center">
-                            <button type="button" onclick="setValue(100)" class="text-lg font-semibold p-2 border border-white rounded-md text-center">
-                                R$ 100,00
-                            </button>
-                            <p class="text-xs md:text-sm w-full">Apoie atividades culturais e esportivas</p>
-                        </div>
-                        <div class="rounded-md flex flex-col items-center justify-center text-center">
-                            <button type="button" onclick="setValue(20)" class="text-lg font-semibold p-2 border border-white rounded-md text-center">
-                                R$ 20,00
-                            </button>
-                            <p class="text-xs md:text-sm w-full">Transforme a realidade de uma família</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-sm">Doar outros valores</span>
-                        <input type="number" name="valor" min="0" placeholder="R$"
-                            class="bg-transparent border-b border-white text-white focus:outline-none w-24">
-                    </div>
+    <!-- Doações -->
+    <section class="flex w-full max-w-[1440px] mx-auto h-[958px] bg-[#455074] justify-between">
+        <div class="flex justify-between w-full">
+            <!-- Lado Esquerdo: Formulário e botões de doação -->
+            <div class="flex w-[612px] flex-col items-start gap-16 p-16">
+                <!-- Título e subtítulo -->
+                <div class="flex flex-col gap-6">
+                    <h2
+                        class="h-[100px] flex flex-col justify-center self-stretch text-[#FEFEFE] text-[48px] font-semibold">
+                        Transforme vidas com um gesto simples!
+                    </h2>
+                    <p class="w-[612px] text-[#FEFEFE] text-xl font-normal">
+                        Faça parte dessa corrente do bem e ajude a mudar histórias!
+                    </p>
                 </div>
-                <div>
-                    <button type="submit"
-                        class="bg-[#FAB515] hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-md">Quero
-                        Doar Agora</button>
-                </div>
-            </form>
-            <div class="hidden md:block bg-gray-300 w-1/2" style="background-image: url(placeholder);"></div>
-        </div>
-    </div>
-</section>
 
-<script defer>
-    function setValue(num) {
-        document.querySelector("input[name='valor']").value = num;
-        document.querySelector("button[type='submit']").click()
-    }
-</script>
+                <!-- Grade de opções de doação -->
+                <div class="grid grid-cols-2 gap-6 w-full">
+                    <!-- Opção 1: R$20,00 -->
+                    <div class="flex flex-col items-center gap-2">
+                        <button type="button" onclick="setValue(20)"
+                            class="flex w-full p-[10px] justify-center items-center gap-[10px] rounded-[12px] border border-[#FEFEFE] hover:bg-[#6171a3] transition-colors cursor-pointer">
+                            <span class="text-[#FEFEFE] text-xl font-medium leading-[150%]">R$ 20,00</span>
+                        </button>
+                        <p class="w-full text-[#FEFEFE] text-sm font-normal leading-[150%]">
+                            Ajude a fornecer materiais educativos
+                        </p>
+                    </div>
+
+                    <!-- Opção 2: R$25,00 -->
+                    <div class="flex flex-col items-center gap-2">
+                        <button type="button" onclick="setValue(25)"
+                            class="flex w-full p-[10px] justify-center items-center gap-[10px] rounded-[12px] border border-[#FEFEFE] hover:bg-[#6171a3] transition-colors cursor-pointer">
+                            <span class="text-[#FEFEFE] text-xl font-medium leading-[150%]">R$ 25,00</span>
+                        </button>
+                        <p class="w-[201px] text-[#FEFEFE] text-sm font-normal leading-[150%]">
+                            Contribua com alimentação para uma criança
+                        </p>
+                    </div>
+
+                    <!-- Opção 3: R$100,00 -->
+                    <div class="flex flex-col items-center gap-2">
+                        <button type="button" onclick="setValue(100)"
+                            class="flex w-full p-[10px] justify-center items-center gap-[10px] rounded-[12px] border border-[#FEFEFE] hover:bg-[#6171a3] transition-colors cursor-pointer">
+                            <span class="text-[#FEFEFE] text-xl font-medium leading-[150%]">R$ 100,00</span>
+                        </button>
+                        <p class="w-full text-[#FEFEFE] text-sm font-normal leading-[150%]">
+                            Apoie atividades culturais e esportivas
+                        </p>
+                    </div>
+
+                    <!-- Opção 4: R$20,00 -->
+                    <div class="flex flex-col items-center gap-2">
+                        <button type="button" onclick="setValue(20)"
+                            class="flex w-full p-[10px] justify-center items-center gap-[10px] rounded-[12px] border border-[#FEFEFE] hover:bg-[#6171a3] transition-colors cursor-pointer">
+                            <span class="text-[#FEFEFE] text-xl font-medium leading-[150%]">R$ 20,00</span>
+                        </button>
+                        <p class="w-full text-[#FEFEFE] text-sm font-normal leading-[150%]">
+                            Transforme a realidade de uma família
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Campo para outros valores e botão de doação -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="flex py-[10px] justify-center items-center gap-[10px] border-b border-[#FEFEFE]">
+                            <input type="number" name="valor" min="0" placeholder="Doar outros valores"
+                                class="bg-transparent text-white placeholder:text-[rgba(254,254,254,0.30)] placeholder:text-xl placeholder:font-medium focus:outline-none w-48">
+                        </div>
+                    </div>
+
+                    <!-- Botão de doação -->
+                    <form class="w-full" hx-post="/doacoes" hx-trigger="submit" hx-boost="true" hx-swap="innerHTML"
+                        hx-push-url="checkout" hx-target="body" enctype="multipart/form-data">
+                        <button type="submit"
+                            class="flex px-5 py-[10px] justify-center items-center gap-[10px] rounded-[12px] bg-[#FAB515] shadow-[0px_4px_4px_0px_rgba(250,181,21,0.25)] text-[#FEFEFE] text-xl font-medium leading-[150%]">
+                            Quero Doar Agora
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Imagem de fundo -->
+            <div class="w-[690px] h-[958px] flex-shrink-0 rounded-l-[24px] bg-center bg-cover bg-no-repeat bg-[#D9D9D9] ml-auto"
+                style="background-image: url('/static/images/doacoes_image.jpeg');">
+            </div>
+        </div>
+    </section>
+
+    <script defer>
+        function setValue(num) {
+            const input = document.querySelector("input[name='valor']");
+            input.value = num;
+
+            // Limpar seleção visual anterior
+            document.querySelectorAll('.selected-value').forEach(el => {
+                el.classList.remove('selected-value');
+                el.classList.remove('bg-[#6171a3]');
+            });
+
+            // Marcar este botão como selecionado
+            const button = event.currentTarget;
+            button.classList.add('selected-value');
+            button.classList.add('bg-[#6171a3]');
+        }
+    </script>
