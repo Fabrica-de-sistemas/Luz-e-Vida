@@ -44,6 +44,9 @@ import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import 'swiper/swiper-bundle.css';
 import 'swiper/modules';
 
+{/* React Router */ }
+import { Link } from 'react-router';
+
 
 type setSwiper = (swiper: SwiperClass) => void;
 
@@ -69,10 +72,10 @@ function Home() {
                             Apoie o Instituto Luz e Vida e transforme conosco a vida de crianças, adolescentes que vivem em
                             vulnerabilidade social
                         </p>
-                        <a href="/doacoes" hx-boost="true"
+                        <Link to="/Luz-e-Vida/doacoes" hx-boost="true"
                             className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold">
                             Doe agora
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -880,10 +883,10 @@ function Home() {
                     </div>
 
                     <div className="md:w-1/3 flex justify-center">
-                        <a href="/doacoes" hx-boost="true"
+                        <Link to="/Luz-e-Vida/doacoes"
                             className="flex px-7 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold text-lg md:text-xl transition-all duration-300 shadow-md w-full">
                             Doe agora
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import endereco from '../assets/images/endereço.png';
 
 export default function Footer() {
@@ -13,25 +14,25 @@ export default function Footer() {
                         <div className="flex w-[553px] items-start gap-[88px]">
                             {/* Container 1 */}
                             <div className="flex flex-col gap-6">
-                                <a href="/" className="h-[24px] text-[#FEFEFE] text-2xl font-medium">
+                                <Link to="/Luz-e-Vida" className="h-[24px] text-[#FEFEFE] text-2xl font-medium">
                                     Início
-                                </a>
-                                <a href="/historia" className="h-[22px] text-[#FEFEFE] text-2xl font-medium">
+                                </Link>
+                                <Link to="/Luz-e-Vida/historia" className="h-[22px] text-[#FEFEFE] text-2xl font-medium">
                                     Quem somos
-                                </a>
-                                <a href="/historia#missao" className="w-[368px] h-[36px] text-[#FEFEFE] text-2xl font-medium">
+                                </Link>
+                                <Link to="Luz-e-Vida/historia#missao" className="w-[368px] h-[36px] text-[#FEFEFE] text-2xl font-medium">
                                     Missão, Visão e Valores
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Container 2 */}
                             <div className="flex flex-col gap-6">
-                                <a href="/projetos" className="h-[31px] text-[#FEFEFE] text-2xl font-medium">
+                                <Link to="Luz-e-Vida/projetos" className="h-[31px] text-[#FEFEFE] text-2xl font-medium">
                                     Projetos
-                                </a>
-                                <a href="/doacoes" className="w-[255px] h-[38px] text-[#FEFEFE] text-2xl font-medium">
+                                </Link>
+                                <Link to="Luz-e-Vida/doacoes" className="w-[255px] h-[38px] text-[#FEFEFE] text-2xl font-medium">
                                     Como Ajudar
-                                </a>
+                                </Link>
                             </div>
                         </div>
 

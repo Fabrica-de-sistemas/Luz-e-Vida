@@ -3,6 +3,7 @@ import Home from './pages/home'
 import './app.css'
 import Layout from './partials/layout'
 import Doacoes from './pages/doacoes'
+import Historia from './pages/historia'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path='/' Component={Layout}>
           <Route index Component={Home} path="/Luz-e-Vida" />
           <Route path='/Luz-e-Vida/doacoes' Component={Doacoes} />
+          <Route path='/Luz-e-Vida/historia' Component={Historia} />
           <Route path='*' Component={() => <h1 className='font-black w-full text-center h-svw text-9xl'>Página não encontrada</h1>} />
         </Route>
       </Routes>
