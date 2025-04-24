@@ -75,10 +75,10 @@ export default function Donate() {
 
                             {/* Botão de doação */}
                             <form className="w-full" hx-post="/doacoes" encType="multipart/form-data">
-                                <button type="submit" onClick={() => { }}
+                                <a href='https://buy.stripe.com/test_cN24jE0pjejhf7i149'
                                     className="flex px-5 py-[10px] justify-center items-center gap-[10px] rounded-[12px] bg-[#FAB515] shadow-[0px_4px_4px_0px_rgba(250,181,21,0.25)] text-[#FEFEFE] text-xl font-medium leading-[150%]">
-                                    Quero Doar Agora
-                                </button>
+                                    Quero Doar Outro Valor
+                                </a>
                             </form>
                         </div>
                     </div>
