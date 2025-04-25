@@ -50,8 +50,18 @@ import { Link } from 'react-router';
 
 type setSwiper = (swiper: SwiperClass) => void;
 
+const journeyImages = [
+    { src: equipe, alt: "Equipe Luz e Vida" },
+    { src: piscina, alt: "Piscina" },
+    { src: rua, alt: "Evento na rua" },
+    { src: aula, alt: "Aula" },
+    { src: uniao, alt: "Momento de união" },
+    { src: obra, alt: "Construção" },
+    { src: festa, alt: "Festa" },
+];
+
 function Home() {
-    const [thumbSwiper, setThumbSwiper] = useState(null);
+    const [thumbSwiper, setThumbSwiper] = useState<SwiperClass | null>(null);
     return (
         <>
             {/* Hero Section */}
@@ -424,7 +434,7 @@ function Home() {
 
             {/* Seção Nossa Jornada ao Longo dos Anos */}
             <section className="flex flex-col items-center w-full max-w-[1525px] h-[684px] flex-shrink-0 mx-auto my-16 px-4">
-                {/* Grid 1: Título */}
+                {/* Título */}
                 <div className="w-full">
                     <h2
                         className="flex h-[90px] flex-col justify-center self-stretch text-[#36383E] text-center text-[48px] font-medium">
@@ -432,79 +442,71 @@ function Home() {
                     </h2>
                 </div>
 
-                {/* Grid 2: Imagem Principal */}
-                <div className="flex flex-col items-center gap-8 self-stretch my-8">
-                </div>
-
-                {/* Grid 3: Miniaturas */}
+                {/* Miniaturas */}
                 <div className='w-full block items-center justify-center m-auto'>
                     <Swiper
                         loop={true}
                         spaceBetween={10}
                         navigation={true}
-                        thumbs={{ swiper: thumbSwiper }}
+                        thumbs={{ swiper: thumbSwiper && !thumbSwiper.destroyed ? thumbSwiper : null }}
                         modules={[FreeMode, Navigation, Thumbs]}
-                        className='w-sm md:w-md lg:w-lg xl:w-xl 2xl:w-2xl'
+                        className='w-full rounded-lg mb-4'
                     >
                         {/* Miniaturas - 7 imagens com a mesma configuração */}
-                        <SwiperSlide>
-                            <img src={equipe} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={piscina} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={rua} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={aula} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={uniao} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={obra} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={festa} />
-                        </SwiperSlide>
+                        {journeyImages.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="block w-full h-64 md:h-96 lg:h-[500px] object-cover"
+                                     />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
 
+                    {/* Thumbnail Swiper */}
                     <Swiper
                         onSwiper={setThumbSwiper as unknown as setSwiper}
+                        loop={false}
                         spaceBetween={10}
                         slidesPerView={4}
                         freeMode={true}
                         watchSlidesProgress={true}
                         modules={[FreeMode, Navigation, Thumbs]}
+                        className='w-full thumbs-swiper'
+                        breakpoints={{
+                            // Mobile
+                            320: {
+                                slidesPerView: 3,
+                                spaceBetween: 8,
+                            },
+                            // Tablet
+                            768: {
+                                slidesPerView: 5,
+                                spaceBetween: 10,
+                            },
+                            // Desktop
+                            1024: {
+                                slidesPerView: 7, // Show all 7 if screen is wide enough
+                                spaceBetween: 10,
+                            },
+                        }}
+
                     >
                         {/* Miniaturas - 7 imagens com a mesma configuração */}
-                        <SwiperSlide>
-                            <img src={equipe} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={piscina} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={rua} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={aula} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={uniao} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={obra} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={festa} />
-                        </SwiperSlide>
+                        {journeyImages.map((image, index) => (
+                            <SwiperSlide
+                                key={index}
+                                className="cursor-pointer rounded-md overflow-hidden opacity-60 hover:opacity-100 transition-opacity duration-200 [&.swiper-slide-thumb-active]:opacity-100 [&.swiper-slide-thumb-active]:ring-2 [&.swiper-slide-thumb-active]:ring-[#FAB515]"
+                            >
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="block w-full h-16 sm:h-20 md:h-24 object-cover"
+                                    />
+                            </SwiperSlide>
+                        ))} 
                     </Swiper>
-                    {/*
-        <div className="flex items-center gap-6 self-stretch overflow-x-auto py-4 justify-center">
-        </div>
-        */}
                 </div>
             </section>
 
@@ -534,12 +536,14 @@ function Home() {
                                 </div>
                             </div>
                         </SwiperSlide>
-                        <div className="swiper-slide">
-                            <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                    style={{ backgroundImage: `url(${caps})`, }}></div>
+                        <SwiperSlide>
+                            <div className="swiper-slide">
+                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
+                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
+                                        style={{ backgroundImage: `url(${caps})`, }}></div>
+                                </div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
@@ -572,12 +576,14 @@ function Home() {
                                 </div>
                             </div>
                         </SwiperSlide>
-                        <div className="swiper-slide">
-                            <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                    style={{ backgroundImage: `url(${cremerj})`, }}></div>
+                        <SwiperSlide>
+                            <div className="swiper-slide">
+                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
+                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
+                                        style={{ backgroundImage: `url(${cremerj})`, }}></div>
+                                </div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">

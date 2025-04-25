@@ -8,5 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/Luz-e-Vida'
+  base: '/Luz-e-Vida',
+  server: {
+    host: '0.0.0.0'
+  }
 })
