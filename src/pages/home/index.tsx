@@ -60,6 +60,41 @@ const journeyImages = [
     { src: festa, alt: "Festa" },
 ];
 
+const partnersImages = [
+    { src: caps, alt: "CAPS" },
+    { src: cmas, alt: "CMAS" },
+    { src: ciep, alt: "CIEP" },
+    { src: cnes, alt: "CNES" },
+    { src: conselhoTutelar, alt: "CONSELHO TUTELAR" },
+    { src: creas, alt: "CREAS" },
+    { src: cremerj, alt: "CREMERJ" },
+    { src: eliel, alt: "ELIEL" },
+    { src: fia, alt: "FIA" },
+    { src: mesabrasil, alt: "MESA BRASIL" },
+    { src: pjerj, alt: "PJERJ" },
+    { src: prefeiturabr, alt: "PREFEITURA BR" },
+    { src: unica, alt: "UNICA" },
+];
+
+
+const breakPoints = {
+    // Mobile
+    320: {
+        slidesPerView: 3,
+        spaceBetween: 8,
+    },
+    // Tablet
+    768: {
+        slidesPerView: 5,
+        spaceBetween: 10,
+    },
+    // Desktop
+    1024: {
+        slidesPerView: 7, // Show all 7 if screen is wide enough
+        spaceBetween: 10,
+    },
+}
+
 function Home() {
     const [thumbSwiper, setThumbSwiper] = useState<SwiperClass | null>(null);
     return (
@@ -474,24 +509,7 @@ function Home() {
                         watchSlidesProgress={true}
                         modules={[FreeMode, Navigation, Thumbs]}
                         className='w-full thumbs-swiper'
-                        breakpoints={{
-                            // Mobile
-                            320: {
-                                slidesPerView: 3,
-                                spaceBetween: 8,
-                            },
-                            // Tablet
-                            768: {
-                                slidesPerView: 5,
-                                spaceBetween: 10,
-                            },
-                            // Desktop
-                            1024: {
-                                slidesPerView: 7, // Show all 7 if screen is wide enough
-                                spaceBetween: 10,
-                            },
-                        }}
-
+                        breakpoints={breakPoints}
                     >
                         {/* Miniaturas - 7 imagens com a mesma configuração */}
                         {journeyImages.map((image, index) => (
@@ -527,111 +545,22 @@ function Home() {
                             delay: 2500,
                             disableOnInteraction: false,
                         }}
-                        modules={[Autoplay]}>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${cmas})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${caps})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${ciep})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${cnes})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${conselhoTutelar})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${creas})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${cremerj})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${eliel})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${fia})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${mesabrasil})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${pjerj})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${prefeiturabr})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide">
-                                <div className="w-[226px] h-[226px] rounded-[24px] flex items-center justify-center">
-                                    <div className="w-full h-full bg-contain bg-no-repeat bg-center"
-                                        style={{ backgroundImage: `url(${unica})`, }}></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                        modules={[Autoplay]}
+                        className='w-full rounded-lg mb-4'
+                        breakpoints={breakPoints}
+                        >
+                        {partnersImages.map((Image, index)=>(
+                            <SwiperSlide
+                                key={index}
+                                className='flex items-center justify-center rounded-md'
+                                >
+                                <img
+                                    src={Image.src}
+                                    alt={Image.alt}
+                                    className='block w-full h-16 sm:h-20 md:h-24 object-cover'
+                                    />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </section>
