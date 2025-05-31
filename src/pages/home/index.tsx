@@ -36,7 +36,10 @@ import festa from '../../assets/images/festa.jpeg'
 {/* Diretores */ }
 import andreImg from '../../assets/images/Diretores/ANDRE.jpeg';
 import adrianaImg from '../../assets/images/Diretores/ADRIANA.jpeg';
-import { useState } from "react";
+
+{/* Maps */ }
+import gmaps from '../../assets/images/icon _google maps_.svg'
+import waze from '../../assets/images/icon _waze_.svg'
 
 {/* Swiper Imports */ }
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
@@ -49,6 +52,10 @@ import { Link } from 'react-router';
 
 {/* React Intersection Observer */ }
 import { useInView } from 'react-intersection-observer';
+
+{/* React */ }
+import { useState } from "react";
+
 
 type setSwiper = (swiper: SwiperClass) => void;
 
@@ -651,10 +658,13 @@ function Home() {
                         {/* Ícones de mapas */}
                         <div className="flex gap-4">
                             {/* Google Maps */}
-                            <img src="../static/images/icon _google maps_.svg" alt="Google Maps" className="w-[42px] h-[42px]" />
-
+                            <Link to="https://g.co/kgs/iv8PMiB" target="_blank" rel="noopener noreferrer">
+                                <img src={gmaps} alt="Google Maps" className="w-[42px] h-[42px]" />
+                            </Link>
                             {/* Waze */}
-                            <img src="../static/images/icon _waze_.svg" alt="Waze" className="w-[42px] h-[36.437px]" />
+                            <Link to="https://www.waze.com/en/live-map/directions/br/rj/r.-dos-soldados,-23?place=ChIJW7J8nfllmQARhl-HmZwFvBs" target="_blank" rel="noopener noreferrer">
+                                <img src={waze} alt="Waze" className="w-[42px] h-[36.437px]" />
+                            </Link>
                         </div>
                     </div>
 
