@@ -362,11 +362,11 @@ function Home() {
             {/* Seção meio (imagem na esquerda, texto na direita) */}
             <section className="w-full overflow-hidden relative flex flex-col lg:flex-row">
                 {/* Lado Esquerdo - Imagem de Fundo */}
-                <div className="w-full lg:w-1/2 h-auto bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${childrenImg})` }}>
+                <div className="w-full lg:w-2/5 xl:w-1/2 h-auto bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${childrenImg})` }}>
                 </div>
 
                 {/* Lado Direito - Texto com Fundo Branco */}
-                <div className="w-full lg:w-1/2 lg:h-[150vh] bg-white flex flex-col justify-center
+                <div className="w-full lg:w-3/5 xl:w-1/2 lg:h-[150vh] bg-white flex flex-col justify-center
                  items-center py-16 lg:py-0">
                     {/* Content Container */}
                     <div className={`flex min-w-0 sm:w-[640px] flex-col justify-between h-full px-12 lg:px-6 relative z-10 gap-16 overflow-hidden`}>
