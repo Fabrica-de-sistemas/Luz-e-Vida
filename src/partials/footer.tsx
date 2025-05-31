@@ -135,7 +135,7 @@ export default function Footer() {
                                     className="w-6 h-6">
                                     <path
                                         d="M18.5 2H15.5C14.1739 2 12.9021 2.52678 11.9645 3.46447C11.0268 4.40215 10.5 5.67392 10.5 7V10H7.5V14H10.5V22H14.5V14H17.5L18.5 10H14.5V7C14.5 6.73478 14.6054 6.48043 14.7929 6.29289C14.9804 6.10536 15.2348 6 15.5 6H18.5V2Z"
-                                        stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        stroke="#FEFEFE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
 
                                 {/* Instagram */}
@@ -143,12 +143,12 @@ export default function Footer() {
                                     className="w-6 h-6">
                                     <path
                                         d="M17.5 2H7.5C4.73858 2 2.5 4.23858 2.5 7V17C2.5 19.7614 4.73858 22 7.5 22H17.5C20.2614 22 22.5 19.7614 22.5 17V7C22.5 4.23858 20.2614 2 17.5 2Z"
-                                        stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        stroke="#FEFEFE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     <path
                                         d="M16.5002 11.3703C16.6236 12.2025 16.4815 13.0525 16.094 13.7993C15.7065 14.5461 15.0933 15.1517 14.3418 15.53C13.5903 15.9082 12.7386 16.0399 11.908 15.9062C11.0773 15.7726 10.31 15.3804 9.71503 14.7855C9.12011 14.1905 8.72793 13.4232 8.59426 12.5925C8.4606 11.7619 8.59226 10.9102 8.97052 10.1587C9.34878 9.40716 9.95438 8.79404 10.7012 8.40654C11.448 8.01904 12.2979 7.87689 13.1302 8.0003C13.9791 8.12619 14.765 8.52176 15.3719 9.12861C15.9787 9.73545 16.3743 10.5214 16.5002 11.3703Z"
-                                        stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M18 6.5H18.01" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
+                                        stroke="#FEFEFE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M18 6.5H18.01" stroke="#FEFEFE" strokeWidth="2" strokeLinecap="round"
+                                        strokeLinejoin="round" />
                                 </svg>
 
                                 {/* WhatsApp */}

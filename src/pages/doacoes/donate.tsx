@@ -98,7 +98,7 @@ export default function Donate() {
                 {/* Adjusted height for different screen sizes */}
                 {/* Adjusted rounding for vertical stacking */}
                 {/* Use order-1 to show image first on mobile, lg:order-2 for large screens */}
-                <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:w-[690px] lg:h-[958px] flex-shrink-0 rounded-b-[24px] lg:rounded-l-[24px] lg:rounded-b-none bg-center bg-cover bg-no-repeat order-1 lg:order-2"
+                <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:w-[690px] lg:h-[958px] flex-shrink-0 rounded-b-[24px] lg:rounded-l-[24px] lg:rounded-b-none bg-center bg-cover bg-no-repeat order-1 lg:order-2 bg-fixed"
                     style={{ backgroundImage: `url(${doacoesImg})` }}>
                 </div>
             </section>
