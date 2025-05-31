@@ -122,7 +122,7 @@ function Home() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative rounded-3xl bg-cover mx-auto my-8 h-[800px] lg:h-[640px]"
+            <section className="relative rounded-3xl bg-cover mx-auto my-8 h-[800px] lg:h-[640px] bg-fixed"
                 style={{ backgroundImage: `url(${hero})`, backgroundPosition: "40%", }}>
                 {/* Gradiente de sobreposição */}
                 <div
