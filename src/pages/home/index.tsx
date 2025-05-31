@@ -47,6 +47,8 @@ import 'swiper/modules';
 {/* React Router */ }
 import { Link } from 'react-router';
 
+{/* React Intersection Observer */ }
+import { useInView } from 'react-intersection-observer';
 
 type setSwiper = (swiper: SwiperClass) => void;
 
@@ -76,6 +78,12 @@ const partnersImages = [
     { src: unica, alt: "UNICA" },
 ];
 
+const projects = [
+    { src: semed, alt: "SEMED", title: "Educação infantil:", paragraph: "O Projeto da Educação Infantil em parceria com o Município de Belford Roxo, através da Secretaria de Educação do município, visa a aprendizagem e o desenvolvimento 260 crianças de 2, 3, 4 e 5 anos com as séries iniciais da Educação Infantil." },
+    { src: fia, alt: "FIA", title: "Esperança:", paragraph: "O Projeto Convivendo com a Esperança, em parceria com a FIA e o Governo do RJ, atende crianças e adolescentes em situação de risco e vulnerabilidade social - Convivên..." },
+    { src: sapeda, alt: "SAPEDA", title: "SAPEDA:", paragraph: "O SAPEDA - Suporte Assistencial Para Enfrentamento Da Adversidade oferece suporte assistencial, priorizando os mais necessitados por meio de políticas compensatória que aten..." },
+    { src: bazar, alt: "BAZAR", title: "Bazar Luz e Vida:", paragraph: "O Bazar Luz e Vida surge da intenção de despertar nos indivíduos atos de solidariedades e ao mesmo tempo envolve-los em questões que venham beneficiar os usuários de nossos serviços, projetos e programas, visando colaborar com as despesas cotidianas." },
+];
 
 const breakPoints = {
     // Mobile
@@ -97,6 +105,20 @@ const breakPoints = {
 
 function Home() {
     const [thumbSwiper, setThumbSwiper] = useState<SwiperClass | null>(null);
+
+    const animationOptions = {
+        // triggerOnce: true,
+        threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const { ref: refFirstTextBlock, inView: inViewFirstTextBlock } = useInView(animationOptions);
+    const { ref: refSecondTextBlock, inView: inViewSecondTextBlock } = useInView({
+        ...animationOptions,
+        // You could add a small delay if needed, e.g., rootMargin: '0px 0px -50px 0px' to trigger a bit later
+        // or use a library for staggered animations if they are very close.
+        // For now, individual triggerOnce should suffice for "one of each time" as they scroll into view.
+    });
+
     return (
         <>
             {/* Hero Section */}
@@ -337,30 +359,67 @@ function Home() {
                 </div>
             </section>
 
-            {/* Seção mid */}
-            <section className="flex justify-evenly items-center mx-auto">
-                {/* Lado esquerdo - Textos centralizados verticalmente */}
-                <div className="flex min-w-0 sm:w-[640px] flex-col justify-center px-12 lg:px-6">
-                    <div className="flex flex-col items-start gap-6 self-stretch">
-                        <h2 className="sm:h-[106px] sm:self-stretch text-[#36383E] text-[44px] font-normal leading-normal relative">
-                            Toda criança merece um <span className="font-semibold">futuro brilhante</span>!
-                            <span className="inline-block ml-1">
-                                <svg className="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#FAB515">
-                                    <path d="M24 0L29.79 18.21L48 24L29.79 29.79L24 48L18.21 29.79L0 24L18.21 18.21L24 0Z">
-                                    </path>
-                                </svg>
-                            </span>
-                        </h2>
-
-                        <p className="sm:w-[478px] text-[#36383E] text-2xl font-normal leading-[150%]">
-                            Milhares vivem sem acesso à educação e oportunidades. Juntos, podemos mudar essa realidade!
-                        </p>
-                    </div>
+            {/* Seção meio (imagem na esquerda, texto na direita) */}
+            <section className="w-full overflow-hidden relative flex flex-col lg:flex-row">
+                {/* Lado Esquerdo - Imagem de Fundo */}
+                <div className="w-full lg:w-1/2 h-auto bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${childrenImg})` }}>
                 </div>
 
-                {/* Lado direito - Imagem */}
-                <div className="hidden lg:block grow w-[51vw] h-[60vw] rounded-l-3xl bg-cover bg-center bg-[#DAD3D3]"
-                    style={{ backgroundImage: `url(${childrenImg})`, }}>
+                {/* Lado Direito - Texto com Fundo Branco */}
+                <div className="w-full lg:w-1/2 lg:h-[150vh] bg-white flex flex-col justify-center
+                 items-center py-16 lg:py-0">
+                    {/* Content Container */}
+                    <div className={`flex min-w-0 sm:w-[640px] flex-col justify-between h-full px-12 lg:px-6 relative z-10 gap-16 overflow-hidden`}>
+                        {/* First Text Block */}
+                        <div
+                            ref={refFirstTextBlock}
+                            className={`transition-all duration-700 ease-out py-12 ${inViewFirstTextBlock ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
+                        >
+                            <div className="flex flex-col items-start gap-6 self-stretch text-[#36383E]">
+                                <div className="flex flex-col items-start">
+                                    <h2 className="self-stretch text-3xl sm:text-4xl lg:text-[44px] font-normal leading-normal relative">
+                                        Toda criança merece um <span className="font-semibold">futuro brilhante!</span>
+                                        <span className="inline-block ml-1">
+                                            <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#FAB515">
+                                                <path d="M24 0L29.79 18.21L48 24L29.79 29.79L24 48L18.21 29.79L0 24L18.21 18.21L24 0Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </h2>
+                                    <p className="sm:w-[478px] text-lg sm:text-xl lg:text-2xl font-normal leading-[150%]">
+                                        Milhares vivem sem acesso à educação e oportunidades. Juntos, podemos mudar essa realidade!
+                                    </p>
+                                </div>
+                            </div>
+                            <Link to="/Luz-e-Vida/doacoes" hx-boost="true"
+                                className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold">
+                                Doe agora
+                            </Link>
+                        </div>
+
+                        {/* Second Text Block */}
+                        <div
+                            ref={refSecondTextBlock}
+                            className={`transition-all duration-700 ease-out py-12 ${inViewSecondTextBlock ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
+                        >
+                            <div className="flex flex-col items-start gap-6 self-stretch text-[#36383E]">
+                                <div className="flex flex-col items-start">
+                                    <h2 className="self-stretch text-3xl sm:text-4xl lg:text-[44px] font-normal leading-normal relative">
+                                        Doe seu tempo, <span className="font-semibold">transforme vidas!</span>
+                                    </h2>
+                                    <p className="sm:w-[478px] text-lg sm:text-xl lg:text-2xl font-normal leading-[150%]">
+                                        Cada sorriso nasce de uma atitua. Seja volutário e ajude a levar esperaça para quem mais precisa!
+                                    </p>
+                                </div>
+                                <Link to="/Luz-e-Vida/doacoes" hx-boost="true"
+                                    className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#455074] hover:bg-[#343e63] text-white font-bold">
+                                    Ser voluntário
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -379,90 +438,38 @@ function Home() {
                             delay: 2500,
                             disableOnInteraction: false,
                         }}
+                        breakpoints={{
+                            // mobile
+                            320: {
+                                slidesPerView: 1,
+                            },
+                            // desktop
+                            1024: { slidesPerView: 3 }
+                        }}
                         modules={[Autoplay]}
                     >
-                        <SwiperSlide>
-                            {/* Projeto 1 (Slide) */}
-                            <div className="swiper-slide">
-                                <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
-                                    <div className="w-full h-[201px]">
-                                        <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${semed})`, }}>
+                        {/* Swiper Slide */}
+                        {projects.map((project, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="swiper-slide">
+                                    <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
+                                        <div className="w-full h-[201px]">
+                                            <div className="w-full h-full rounded-3xl bg-cover bg-center"
+                                                style={{ backgroundImage: `url(${project.src})`, }}>
+                                            </div>
+                                        </div>
+                                        <h3 className="text-[#36383E] text-2xl font-semibold">
+                                            {project.title}
+                                        </h3>
+                                        <div className="h-[140px] overflow-hidden">
+                                            <p className="text-[#36383E] text-base font-normal leading-[150%]">
+                                                {project.paragraph}
+                                            </p>
                                         </div>
                                     </div>
-                                    <h3 className="text-[#36383E] text-2xl font-semibold">
-                                        Educação infantil:
-                                    </h3>
-                                    <div className="h-[140px] overflow-hidden">
-                                        <p className="text-[#36383E] text-base font-normal leading-[150%]">
-                                            O Projeto da Educação Infantil em parceria com o Município de Belford Roxo, através
-                                            da
-                                            Secretaria de Educação do município, visa a aprendizagem e o desenvolvimento 260
-                                            crianças de 2, 3, 4 e 5 anos com as séries iniciais da Educação Infantil.
-                                        </p>
-                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {/* Projeto 2 (Slide) */}
-                            <div className="swiper-slide">
-                                <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
-                                    <div className="w-full h-[201px]">
-                                        <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${fia})`, backgroundPosition: "0px 30px", backgroundSize: "100% 73.798%", }}>
-                                        </div>
-                                    </div>
-                                    <h3 className="text-[#36383E] text-2xl font-semibold">
-                                        Esperança:
-                                    </h3>
-                                    <p className="text-[#36383E] text-base font-normal leading-[140%]">
-                                        O Projeto Convivendo com a Esperança, em parceria com a FIA e o Governo do RJ, atende
-                                        crianças e adolescentes em situação de risco e vulnerabilidade social - Convivên...
-                                    </p>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {/* Projeto 3 (Slide) */}
-                            <div className="swiper-slide">
-                                <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
-                                    <div className="w-full h-[201px]">
-                                        <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${sapeda})`, }}>
-                                        </div>
-                                    </div>
-                                    <h3 className="text-[#36383E] text-2xl font-semibold">
-                                        SAPEDA:
-                                    </h3>
-                                    <p className="text-[#36383E] text-base font-normal leading-[150%]">
-                                        O SAPEDA - Suporte Assistencial Para Enfrentamento Da Adversidade oferece suporte
-                                        assistencial, priorizando os mais necessitados por meio de políticas compensatória que
-                                        aten...
-                                    </p>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {/* Projeto 4 (Slide) */}
-                            <div className="swiper-slide">
-                                <div className="w-[280px] flex flex-col items-start gap-[10px] mx-auto">
-                                    <div className="w-full h-[201px]">
-                                        <div className="w-full h-full rounded-3xl bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${bazar})`, }}>
-                                        </div>
-                                    </div>
-                                    <h3 className="text-[#36383E] text-2xl font-semibold">
-                                        Bazar Luz e Vida:
-                                    </h3>
-                                    <p className="text-[#36383E] text-base font-normal leading-[150%]">
-                                        O Bazar Luz e Vida surge da intenção de despertar nos indivíduos atos de solidariedades
-                                        e ao mesmo tempo envolve-los em questões que venham beneficiar os usuários de nossos
-                                        serviços, projetos e programas, visando colaborar com as despesas cotidianas.
-                                    </p>
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </section>
@@ -494,7 +501,7 @@ function Home() {
                                     src={image.src}
                                     alt={image.alt}
                                     className="block w-full h-64 md:h-96 lg:h-[500px] object-cover"
-                                     />
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -521,9 +528,9 @@ function Home() {
                                     src={image.src}
                                     alt={image.alt}
                                     className="block w-full h-16 sm:h-20 md:h-24 object-cover"
-                                    />
+                                />
                             </SwiperSlide>
-                        ))} 
+                        ))}
                     </Swiper>
                 </div>
             </section>
@@ -548,17 +555,17 @@ function Home() {
                         modules={[Autoplay]}
                         className='w-full rounded-lg mb-4'
                         breakpoints={breakPoints}
-                        >
-                        {partnersImages.map((Image, index)=>(
+                    >
+                        {partnersImages.map((Image, index) => (
                             <SwiperSlide
                                 key={index}
                                 className='flex items-center justify-center rounded-md'
-                                >
+                            >
                                 <img
                                     src={Image.src}
                                     alt={Image.alt}
                                     className='block w-full h-16 sm:h-20 md:h-24 object-cover'
-                                    />
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
