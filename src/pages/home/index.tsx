@@ -130,6 +130,15 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({ n, inView, isPercentage
     return <animated.span>{number.to(val => prefix + Math.floor(val) + (isPercentage ? "%" : ""))}</animated.span>;
 };
 
+function DoeAgora() {
+    return (
+        <Link to="/Luz-e-Vida/doacoes"
+            className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-[#4f4f4f] font-bold">
+            Doe agora
+        </Link>
+    )
+}
+
 function Home() {
     const [thumbSwiper, setThumbSwiper] = useState<SwiperClass | null>(null);
 
@@ -167,10 +176,7 @@ function Home() {
                             Apoie o Instituto Luz e Vida e transforme conosco a vida de crianças, adolescentes que vivem em
                             vulnerabilidade social
                         </p>
-                        <Link to="/Luz-e-Vida/doacoes"
-                            className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold">
-                            Doe agora
-                        </Link>
+                        <DoeAgora />
                     </div>
                 </div>
             </section>
@@ -420,10 +426,7 @@ function Home() {
                                     </p>
                                 </div>
                             </div>
-                            <Link to="/Luz-e-Vida/doacoes"
-                                className="flex px-14 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold">
-                                Doe agora
-                            </Link>
+                            <DoeAgora/>
                         </div>
 
                         {/* Second Text Block */}
@@ -507,8 +510,8 @@ function Home() {
                 {/* Título */}
                 <div className="w-full">
                     <h2
-                        className="flex h-[90px] flex-col justify-center self-stretch text-[#36383E] text-center text-[48px] font-medium">
-                        Nossa Jornada <span className="text-[#CFCFFF] text-[44px] font-semibold">ao longo dos anos</span>
+                        className="flex h-[90px] flex-col justify-center self-stretch text-[#36383E] text-center text-[48px] font-medium py-5 mb-8">
+                        Nossa Jornada <span className="text-gray-900 text-[44px] font-semibold">ao longo dos anos</span>
                     </h2>
                 </div>
 
@@ -657,7 +660,7 @@ function Home() {
                     </h2>
 
                     {/* Subtítulo */}
-                    <p className="w-full text-[#989A9F] text-[20px] font-normal">
+                    <p className="w-full text-gray-900 text-[20px] font-normal">
                         Dúvidas, apoio ou ajuda? Fale com a gente, estamos aqui por você! 😊
                     </p>
 
@@ -781,7 +784,7 @@ function Home() {
 
                 {/* Formulário de Contato - Lado Direito */}
                 <div
-                    className="flex-shrink-0 rounded-[24px] bg-[#FEFEFE] shadow-[4px_6px_6px_0px_rgba(52,52,52,0.24)] p-2 md:p-8">
+                    className="flex-shrink-0 rounded-[24px] bg-[#FEFEFE] shadow-[0px_4px_4px_4px_rgba(52,52,52,0.24)] p-2 md:p-8">
                     <form className="space-y-6">
                         {/* Nome */}
                         <div>
@@ -856,10 +859,7 @@ function Home() {
                     </div>
 
                     <div className="md:w-1/3 flex justify-center">
-                        <Link to="/Luz-e-Vida/doacoes"
-                            className="flex px-7 py-3 justify-center items-center gap-2.5 rounded-3xl bg-[#FAB515] hover:bg-amber-500 text-white font-bold text-lg md:text-xl transition-all duration-300 shadow-md w-full">
-                            Doe agora
-                        </Link>
+                        <DoeAgora />
                     </div>
                 </div>
             </section>
