@@ -119,7 +119,7 @@ export default function Historia() {
 
                 {/* Seção 3: O que nos move */}
                 <section
-                    className="relative w-[1390px] h-[1564px] flex-shrink-0 rounded-[24px] bg-[#455074] mx-auto overflow-hidden">
+                    className="relative w-full max-w-[1390px] rounded-[24px] bg-[#455074] mx-auto overflow-hidden my-12 md:my-20">
                     <MVV />
                 </section>
 

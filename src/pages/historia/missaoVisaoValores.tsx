@@ -21,7 +21,7 @@ export default function MVV() {
 
                 {/* Efeito 3: Diagonal esquerda */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="233" viewBox="0 0 88 233" fill="none"
-                    className="absolute top-40 left-0 w-[150.001px] h-[231.841px]">
+                    className="hidden sm:block absolute top-40 left-0 w-[100px] md:w-[150.001px] h-auto">
                     <path d="M0.312256 13.7043V20.8431L34.3816 0.575195H22.3816L0.312256 13.7043Z" fill="#FEFEFE"
                         fillOpacity="0.05" />
                     <path d="M54.8577 0.575195L0.312256 33.0244V40.1633L66.8577 0.575195H54.8577Z" fill="#FEFEFE"
@@ -58,7 +58,7 @@ export default function MVV() {
 
                 {/* Efeito 4: Diagonal direita */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="151" height="233" viewBox="0 0 151 233" fill="none"
-                    className="absolute top-40 right-0 w-[150.001px] h-[231.841px]">
+                    className="hidden sm:block absolute top-40 right-0 w-[100px] md:w-[150.001px] h-auto">
                     <path d="M0.22876 13.7045V20.8434L34.2981 0.575439H22.2981L0.22876 13.7045Z" fill="#FEFEFE"
                         fillOpacity="0.05" />
                     <path d="M54.7742 0.575439L0.22876 33.0246V40.1635L66.7742 0.575439H54.7742Z" fill="#FEFEFE"
@@ -95,11 +95,11 @@ export default function MVV() {
             </div>
 
             {/* Conteúdo principal da seção */}
-            <div className="relative z-10 w-[1200px] h-[1431px] flex-shrink-0 mx-auto py-16 flex flex-col gap-16">
+            <div className="relative z-10 w-full max-w-6xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 flex flex-col gap-10 md:gap-12 lg:gap-16">
                 {/* Texto 1: Missão */}
-                <div className="flex w-[937px] flex-col items-start gap-4 mx-auto">
+                <div className="flex w-full max-w-3xl lg:max-w-4xl flex-col items-center text-center md:items-start md:text-left gap-4 mx-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="108" height="90" viewBox="0 0 108 90" fill="none"
-                        className="w-[108px] h-[90px] aspect-[6/5]">
+                        className="w-20 h-auto sm:w-24 lg:w-[108px]">
                         <path
                             d="M45 82.5C65.7107 82.5 82.5 65.7107 82.5 45C82.5 24.2893 65.7107 7.5 45 7.5C24.2893 7.5 7.5 24.2893 7.5 45C7.5 65.7107 24.2893 82.5 45 82.5Z"
                             stroke="#FEFEFE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -113,10 +113,10 @@ export default function MVV() {
                             d="M83.4056 24.3324L97.2144 23.2499L89.9975 10.7499L82.1556 22.1674L83.4056 24.3324ZM44.625 46.7224L84.4882 23.7074L83.2382 21.5424L43.375 44.5574L44.625 46.7224Z"
                             fill="#FAB515" />
                     </svg>
-                    <h3 className="h-[38px] self-stretch text-[#FEFEFE] text-[32px] font-bold leading-normal">
+                    <h3 className="self-stretch text-[#FEFEFE] text-2xl sm:text-3xl lg:text-[32px] font-bold leading-normal">
                         Missão
                     </h3>
-                    <p className="w-[861px] text-[#FEFEFE] text-[20px] font-normal leading-[155%]">
+                    <p className="w-full text-[#FEFEFE] text-base sm:text-lg lg:text-[20px] font-normal leading-[155%]">
                         Transformar a realidade da comunidade de Xavante, em Belford Roxo, por meio de atendimento
                         técnico especializado, saúde, educação e atividades complementares de qualidade. Utilizamos a
                         cultura, o esporte, o lazer e a educação como ferramentas de inclusão e transformação social,
@@ -132,9 +132,9 @@ export default function MVV() {
                 </div>
 
                 {/* Texto 2: Visão  */}
-                <div className="flex w-[937px] flex-col items-start gap-4 ml-auto">
+                <div className="flex w-full max-w-3xl lg:max-w-4xl flex-col items-center text-center md:items-end md:text-right gap-4 md:ml-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="98" viewBox="0 0 90 98" fill="none"
-                        className="w-[90px] h-[98px] aspect-[45/49]">
+                        className="w-20 h-auto sm:w-22 lg:w-[90px]">
                         <g clipPath="url(#clip0_129_17104)">
                             <path
                                 d="M56.25 60.5C57 56.75 58.875 54.125 61.875 51.125C65.625 47.75 67.5 42.875 67.5 38C67.5 32.0326 65.1295 26.3097 60.9099 22.0901C56.6903 17.8705 50.9674 15.5 45 15.5C39.0326 15.5 33.3097 17.8705 29.0901 22.0901C24.8705 26.3097 22.5 32.0326 22.5 38C22.5 41.75 23.25 46.25 28.125 51.125C30.75 53.75 33 56.75 33.75 60.5M33.75 75.5H56.25M37.5 90.5H52.5"
@@ -164,10 +164,10 @@ export default function MVV() {
                             </clipPath>
                         </defs>
                     </svg>
-                    <h3 className="h-[38px] self-stretch text-[#FEFEFE] text-[32px] font-bold leading-normal">
+                    <h3 className="self-stretch text-[#FEFEFE] text-2xl sm:text-3xl lg:text-[32px] font-bold leading-normal">
                         Visão
                     </h3>
-                    <p className="w-[861px] text-[#FEFEFE] text-[20px] font-normal leading-[155%]">
+                    <p className="w-full text-[#FEFEFE] text-base sm:text-lg lg:text-[20px] font-normal leading-[155%]">
                         Ser reconhecido como um agente transformador no bairro Xavante, promovendo iniciativas que
                         valorizem uma educação de excelência e elevem a qualidade de vida da comunidade.
                         Buscamos ser um ponto de apoio e realização, onde cada pessoa que nos procura possa desenvolver
@@ -177,9 +177,9 @@ export default function MVV() {
                 </div>
 
                 {/* Texto 3: Valores */}
-                <div className="flex w-[937px] flex-col items-start gap-4 mx-auto">
+                <div className="flex w-full max-w-3xl lg:max-w-4xl flex-col items-center text-center md:items-start md:text-left gap-4 mx-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="98" viewBox="0 0 90 98" fill="none"
-                        className="w-[90px] h-[97.714px] aspect-[90.00/97.71]">
+                        className="w-20 h-auto sm:w-22 lg:w-[90px]">
                         <path
                             d="M41.25 60.2141H48.75C50.7391 60.2141 52.6468 59.4239 54.0533 58.0174C55.4598 56.6109 56.25 54.7032 56.25 52.7141C56.25 50.725 55.4598 48.8173 54.0533 47.4108C52.6468 46.0043 50.7391 45.2141 48.75 45.2141H37.5C35.25 45.2141 33.375 45.9641 32.25 47.4641L11.25 67.7141"
                             stroke="#FEFEFE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -194,10 +194,10 @@ export default function MVV() {
                             d="M73.1248 29.3035C75.7498 26.6785 78.7498 23.3035 78.7498 19.1785C79.0119 16.8869 78.4925 14.5741 77.2758 12.6146C76.0591 10.6552 74.2164 9.164 72.0463 8.38275C69.8762 7.60151 67.5058 7.57597 65.3193 8.31027C63.1329 9.04458 61.2585 10.4957 59.9998 12.4285C58.6612 10.6457 56.7862 9.33894 54.6503 8.70016C52.5143 8.06138 50.2298 8.12417 48.1321 8.87933C46.0345 9.63449 44.2342 11.0422 42.9955 12.8959C41.7568 14.7495 41.145 16.9515 41.2498 19.1785C41.2498 23.6785 44.2498 26.6785 46.8748 29.6785L59.9998 42.4285L73.1248 29.3035Z"
                             stroke="#FEFEFE" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <h3 className="h-[38px] self-stretch text-[#FEFEFE] text-[32px] font-bold leading-normal">
+                    <h3 className="self-stretch text-[#FEFEFE] text-2xl sm:text-3xl lg:text-[32px] font-bold leading-normal">
                         Valores
                     </h3>
-                    <p className="w-[861px] text-[#FEFEFE] text-[20px] font-normal leading-[155%]">
+                    <p className="w-full text-[#FEFEFE] text-base sm:text-lg lg:text-[20px] font-normal leading-[155%]">
                         Somos guiados pelo amor ao próximo, respeito, honestidade e empatia. Acreditamos na justiça, na
                         educação e no poder transformador da cultura, arte, esporte e lazer. Com humildade, ética e
                         transparência, trabalhamos para garantir direitos, promover inclusão e impactar vidas com

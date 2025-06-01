@@ -36,6 +36,8 @@ import festa from '../../assets/images/festa.jpeg'
 {/* Diretores */ }
 import andreImg from '../../assets/images/Diretores/ANDRE.jpeg';
 import adrianaImg from '../../assets/images/Diretores/ADRIANA.jpeg';
+import DirectorProfile from './DirectorProfile';
+
 
 {/* Maps */ }
 import gmaps from '../../assets/images/icon _google maps_.svg'
@@ -58,6 +60,9 @@ import { useState } from "react";
 
 {/* React Spring for animations */}
 import { useSpring, animated } from '@react-spring/web'
+
+{/* MVV */}
+import MVV from '../historia/missaoVisaoValores';
 
 
 type setSwiper = (swiper: SwiperClass) => void;
@@ -167,7 +172,7 @@ function Home() {
                 </div>
 
                 {/* Conteúdo centralizado */}
-                <div className="relative z-10 flex h-full items-end md:items-center p-8 md:p-0">
+                <div className="relative flex h-full items-end md:items-center p-8 md:p-0">
                     <div className="flex flex-col items-center md:items-start gap-8 ml-auto mr-15 max-w-[450px]">
                         <h1 className="flex w-full flex-col justify-center text-[#FEFEFE] text-3xl font-extrabold">
                             Juntos, podemos fazer a diferença!
@@ -263,7 +268,7 @@ function Home() {
             {/* What Drives Us Section */}
             <section className="relative flex py-[120px] px-[51px] justify-center items-center mx-auto bg-white w-full">
                 {/* Conteúdo principal */}
-                <div className="relative z-10 flex flex-col items-center gap-20">
+                <div className="relative flex flex-col items-center gap-20">
                     {/* Título e ornamento */}
                     <div className="flex flex-col items-center">
                         <h2
@@ -281,114 +286,9 @@ function Home() {
                     </div>
 
                     {/* Cards */}
-                    <div
-                        className="flex justify-center gap-7 text-wrap flex-wrap lg:bg-[#455074] rounded-3xl lg:flex-col w-full lg:justify-between p-2 lg:p-8 text-[#36383E] lg:text-white">
-                        {/* Card 1 - Missão */}
-                        <div
-                            className="flex md:w-1/4 lg:w-full p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] lg:border-0 bg-white lg:bg-inherit shadow-md lg:shadow-none">
-                            <svg width="40" height="34" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.6667 30.5556C24.3373 30.5556 30.5556 24.3373 30.5556 16.6667C30.5556 8.9961 24.3373 2.77783 16.6667 2.77783C8.9961 2.77783 2.77783 8.9961 2.77783 16.6667C2.77783 24.3373 8.9961 30.5556 16.6667 30.5556Z"
-                                    className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round" strokeLinejoin="round" />
-                                <path
-                                    d="M16.6668 25.0002C21.2692 25.0002 25.0002 21.2692 25.0002 16.6668C25.0002 12.0645 21.2692 8.3335 16.6668 8.3335C12.0645 8.3335 8.3335 12.0645 8.3335 16.6668C8.3335 21.2692 12.0645 25.0002 16.6668 25.0002Z"
-                                    className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round" strokeLinejoin="round" />
-                                <path
-                                    d="M16.6667 19.4445C18.2008 19.4445 19.4445 18.2008 19.4445 16.6667C19.4445 15.1326 18.2008 13.8889 16.6667 13.8889C15.1326 13.8889 13.8889 15.1326 13.8889 16.6667C13.8889 18.2008 15.1326 19.4445 16.6667 19.4445Z"
-                                    className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round" strokeLinejoin="round" />
-                                <path
-                                    d="M30.5888 9.22917L36.1123 8.79616L33.2256 3.79616L30.0888 8.36314L30.5888 9.22917ZM16.5464 17.3366L31.0218 8.97917L30.5218 8.11314L16.0464 16.4706L16.5464 17.3366Z"
-                                    fill="#FAB515" />
-                            </svg>
-
-                            <h3 className="flex flex-col justify-center text-3xl font-bold">
-                                Missão
-                            </h3>
-                            <p className="lg:hidden text-base font-normal leading-[150%] lg:w-2/3">
-                                Nossa missão é promover inclusão e transformação social na comunidade do Xavantes, oferecendo
-                                educação, cultura e oportunidades para um futuro melhor.
-                            </p>
-                            <p className="hidden lg:block text-base font-normal leading-[150%] lg:w-2/3">
-                                Transformar a realidade da comunidade de Xavante, em Belford Roxo, por meio de atendimento
-                                técnico especializado, saúde, educação e atividades complementares de qualidade. Utilizamos a
-                                cultura, o esporte, o lazer e a educação como ferramentas de inclusão e transformação social,
-                                estimulando os jovens a se tornarem cidadãos críticos e conscientes das constantes mudanças na
-                                sociedade.
-                                Criar alternativas diante das situações de vulnerabilidade social, promovendo a transformação do
-                                ser humano por meio de programas e projetos socioassistenciais e profissionalizantes. Nossas
-                                atividades são guiadas pelos princípios do Estatuto da Criança e do Adolescente, desenvolvendo
-                                uma prática pedagógica que valoriza a participação ativa dos assistidos.
-                                Atuar em rede para fortalecer o desenvolvimento da equipe e trabalhar em alinhamento com os
-                                Objetivos de Desenvolvimento Sustentável (ODS).
-                            </p>
-                        </div>
-
-                        {/* Card 2 - Visão */}
-                        <div
-                            className="flex md:w-1/4 lg:w-full p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] lg:border-0 bg-white shadow-md lg:shadow-none lg:items-end lg:bg-inherit lg:text-white">
-                            <svg width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clipPath="url('#clip0_152_2920')">
-                                    <path
-                                        d="M25 26.8889C25.3333 25.2223 26.1667 24.0556 27.5 22.7223C29.1667 21.2223 30 19.0556 30 16.8889C30 14.2368 28.9464 11.6932 27.0711 9.81785C25.1957 7.94248 22.6522 6.88892 20 6.88892C17.3478 6.88892 14.8043 7.94248 12.9289 9.81785C11.0536 11.6932 10 14.2368 10 16.8889C10 18.5556 10.3333 20.5556 12.5 22.7223C13.6667 23.8889 14.6667 25.2223 15 26.8889M15 33.5556H25M16.6667 40.2223H23.3333"
-                                        className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round"
-                                        strokeLinejoin="round" />
-                                    <path d="M27.4365 4.64307L29.2071 1.55974" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M12.2275 3.81128L9.98753 1.05006" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M19.9746 2.87476L20.0181 -0.680534" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M31.3159 8.17871L34.0898 5.95443" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M8.2251 8.7251L5.21522 6.83232" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M32.7095 13.8887L36.0597 12.6979" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M3.95215 13.0459L7.39794 13.9225" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M31.8892 18.302L35.2975 19.3145" stroke="#FAB515" strokeLinecap="round" />
-                                    <path d="M7.85059 18.6599L4.44634 19.6861" stroke="#FAB515" strokeLinecap="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_152_2920">
-                                        <rect width="40" height="43.5556" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <h3 className="flex flex-col justify-center lg:justify-end text-3xl font-bold">
-                                Visão
-                            </h3>
-                            <p className="lg:hidden text-base font-normal leading-[150%] lg:w-2/3">
-                                Ser um agente de transformação no Xavantes, promovendo educação de excelência e melhorando a
-                                qualidade de vida da comunidade.
-                            </p>
-                            <p className="hidden lg:block text-base font-normal leading-[150%] lg:w-2/3">
-                                Ser reconhecido como um agente transformador no bairro Xavante, promovendo iniciativas que
-                                valorizem uma educação de excelência e elevem a qualidade de vida da comunidade.
-                                Buscamos ser um ponto de apoio e realização, onde cada pessoa que nos procura possa desenvolver
-                                seu potencial máximo, transformar sua realidade e romper os ciclos de desigualdade e
-                                vulnerabilidade social.
-                            </p>
-                        </div>
-
-                        {/* Card 3 - Valores */}
-                        <div
-                            className="flex md:w-1/4 lg:w-full p-5 flex-col items-start gap-[18px] rounded-3xl border-[1.8px] border-[#36383E] lg:border-0 bg-white lg:bg-inherit shadow-md lg:shadow-none">
-                            <svg width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M18.3333 26.7619H21.6667C22.5507 26.7619 23.3986 26.4107 24.0237 25.7856C24.6488 25.1604 25 24.3126 25 23.4285C25 22.5445 24.6488 21.6966 24.0237 21.0715C23.3986 20.4464 22.5507 20.0952 21.6667 20.0952H16.6667C15.6667 20.0952 14.8333 20.4285 14.3333 21.0952L5 30.0952"
-                                    className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round" strokeLinejoin="round" />
-                                <path
-                                    d="M11.6666 36.7619L14.3333 34.4286C14.8333 33.7619 15.6666 33.4286 16.6666 33.4286H23.3333C25.1666 33.4286 26.8333 32.7619 27.9999 31.4286L35.6666 24.0953C36.3097 23.4875 36.6851 22.6491 36.7101 21.7645C36.7351 20.88 36.4077 20.0217 35.7999 19.3786C35.1921 18.7354 34.3537 18.3601 33.4692 18.3351C32.5847 18.3101 31.7264 18.6375 31.0833 19.2453L24.0833 25.7453M3.33325 28.4286L13.3333 38.4286"
-                                    className="stroke-[#36383E] lg:stroke-white" strokeLinecap="round" strokeLinejoin="round" />
-                                <path
-                                    d="M32.4999 13.0238C33.6666 11.8572 34.9999 10.3572 34.9999 8.52385C35.1164 7.50539 34.8856 6.47744 34.3448 5.60658C33.8041 4.73571 32.9851 4.07297 32.0206 3.72575C31.0561 3.37853 30.0026 3.36718 29.0308 3.69354C28.0591 4.01989 27.226 4.66484 26.6666 5.52385C26.0716 4.73148 25.2383 4.15072 24.289 3.86682C23.3397 3.58292 22.3244 3.61083 21.3921 3.94645C20.4598 4.28208 19.6596 4.90774 19.1091 5.73159C18.5586 6.55544 18.2866 7.53408 18.3333 8.52385C18.3333 10.5238 19.6666 11.8572 20.8333 13.1905L26.6666 18.8572L32.4999 13.0238Z"
-                                    className="stroke-[#455074] lg:stroke-red-500" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-
-                            <h3 className="flex flex-col justify-center text-3xl font-bold">
-                                Valores
-                            </h3>
-                            <p className="text-base font-normal leading-[150%] lg:w-2/3">
-                                Somos guiados pelo amor ao próximo, respeito, honestidade e empatia. Acreditamos na justiça, na
-                                educação e no poder transformador da cultura, arte, esporte e lazer. Com humildade, ética e
-                                transparência, trabalhamos para garantir direitos, promover inclusão e impactar vidas com
-                                solidariedade.
-                            </p>
-                        </div>
+                    <div 
+                        className="relative w-full max-w-[1390px] rounded-[24px] bg-[#455074] mx-auto overflow-hidden">
+                        <MVV />
                     </div>
                 </div>
             </section>
@@ -615,38 +515,8 @@ function Home() {
 
                 {/* Container dos Diretores */}
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                    {/* Primeiro Diretor */}
-                    <div className="flex flex-col md:flex-row items-center gap-8">
-                        {/* Imagem da Pessoa */}
-                        <div className="w-[220px] h-[225.587px] rounded-[200px] bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url(${andreImg})`, backgroundPosition: "0px -4.124px", backgroundSize: "100% 146.507%", }}>
-                        </div>
-
-                        {/* Descrição da Pessoa */}
-                        <div className="flex flex-col items-center md:items-start">
-                            {/* Nome da Pessoa */}
-                            <h3 className="w-full text-[#36383E] text-2xl font-medium">André</h3>
-                            {/* Apelido */}
-                            <p className="w-[138px] text-[#36383E] text-base font-normal leading-[150%]">Conhecido como DR. LUZ</p>
-                        </div>
-                    </div>
-
-                    {/* Segundo Diretor */}
-                    <div className="flex flex-col md:flex-row items-center gap-8">
-                        {/* Imagem da Pessoa */}
-                        <div className="w-[220px] h-[225.587px] rounded-[200px] bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url(${adrianaImg})`, backgroundPosition: "0px -4.124px", backgroundSize: "100% 146.507%", }}>
-                        </div>
-
-                        {/* Descrição da Pessoa */}
-                        <div className="flex flex-col items-center md:items-start">
-                            {/* Nome da Pessoa */}
-                            <h3 className="w-full text-[#36383E] text-2xl font-medium">Adriana</h3>
-                            {/* Apelido */}
-                            <p className="w-[138px] text-[#36383E] text-base font-normal leading-[150%]">Conhecida como DRA. VIDA
-                            </p>
-                        </div>
-                    </div>
+                    <DirectorProfile imageUrl={andreImg} name="André" nickname="Conhecido como DR. LUZ" />
+                    <DirectorProfile imageUrl={adrianaImg} name="Adriana" nickname="Conhecida como DRA. VIDA" />
                 </div>
             </section>
 
@@ -784,7 +654,7 @@ function Home() {
 
                 {/* Formulário de Contato - Lado Direito */}
                 <div
-                    className="flex-shrink-0 rounded-[24px] bg-[#FEFEFE] shadow-[0px_4px_4px_4px_rgba(52,52,52,0.24)] p-2 md:p-8">
+                    className="flex-shrink-0 rounded-[24px] bg-gray-200 shadow-[0px_4px_4px_4px_rgba(52,52,52,0.24)] p-2 md:p-8">
                     <form className="space-y-6">
                         {/* Nome */}
                         <div>
@@ -794,7 +664,7 @@ function Home() {
                             </label>
                             <input type="text" id="nome"
                                 className="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
-                                placeholder="Seu nome" />
+                                placeholder="Seu nome" style={{ height: '40px' }} /> {/* Or add py-2 for padding */}
                         </div>
 
                         {/* Email e Telefone - Grid de 2 colunas */}
@@ -807,7 +677,7 @@ function Home() {
                                 </label>
                                 <input type="email" id="email"
                                     className="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
-                                    placeholder="Seu email" />
+                                    placeholder="Seu email" style={{ height: '40px' }} /> {/* Or add py-2 for padding */}
                             </div>
 
                             {/* Telefone */}
@@ -818,7 +688,7 @@ function Home() {
                                 </label>
                                 <input type="tel" id="telefone"
                                     className="w-full flex-shrink-0 rounded-[12px] border border-[#DAD3D3] bg-[#FEFEFE] px-4"
-                                    placeholder="Seu telefone" />
+                                    placeholder="Seu telefone" style={{ height: '40px' }} /> {/* Or add py-2 for padding */}
                             </div>
                         </div>
 
@@ -847,7 +717,7 @@ function Home() {
             {/* Call to Action */}
             <section className="py-16 px-4">
                 <div
-                    className="container mx-auto flex flex-col md:flex-row items-center justify-around gap-8 bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                    className="container mx-auto flex flex-col md:flex-row items-center justify-around gap-8 bg-gray-200 rounded-3xl shadow-xl p-8 md:p-12">
                     <div className="md:w-1/2 text-center md:text-left text-[#36383E]">
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
                             Juntos, podemos fazer a diferença!
