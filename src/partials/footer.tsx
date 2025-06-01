@@ -62,6 +62,13 @@ export default function Footer() {
                             {/* Mapa */}
                             <div className="w-[256px] h-[206px] sm:w-[374px] sm:h-[206px] rounded-[24px] bg-center bg-cover bg-no-repeat mt-2"
                                 style={{ backgroundImage: `url(${endereco})`, }}>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.717758091102!2d-43.402247723993185!3d-22.738729631887892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9965f9011a97a3%3A0x89ca0c2bf6a9a32f!2sInstituto%20Luz%20E%20Vida!5e0!3m2!1spt-BR!2sbr!4v1748731147016!5m2!1spt-BR!2sbr"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    style={{ border: 0 }}
+                                ></iframe>
                             </div>
                         </div>
 
@@ -180,7 +187,7 @@ export default function Footer() {
 
                     {/* Texto de copyright */}
                     <p className="self-stretch text-[#FEFEFE] text-center text-base font-medium pb-6 text-wrap">
-                        © Copyright 2023 Todos os direitos reservados ao Instituto Luz e Vida – CNPJ: 05.090.047/0001-07
+                        &copy; Copyright {new Date().getFullYear()} Todos os direitos reservados ao Instituto Luz e Vida – CNPJ: 05.090.047/0001-07
                     </p>
                 </div>
             </section>

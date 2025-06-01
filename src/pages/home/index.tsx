@@ -257,7 +257,7 @@ function Home() {
                     {/* Área do vídeo */}
                     <div className="flex w-[80vw] h-[45vw] justify-center items-center rounded-3xl bg-gray-300 overflow-hidden">
                         <iframe className="w-full h-full" src="https://www.youtube.com/embed/cEqvgF8zkIM"
-                            title="YouTube video player" frameBorder="0"
+                            title="YouTube video player" frameBorder="0" loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen>
                         </iframe>
